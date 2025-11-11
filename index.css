@@ -1,0 +1,736 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+
+  }
+header {
+    position: relative;
+    background-color: white;
+    width: 100vw;
+    height: 10vh;
+}
+
+header img {
+    position: absolute;
+    top: 70%;
+    left: 1vw;
+    transform: translatey(-50%);
+    height: 100%;
+    width: auto;
+}
+
+
+
+div.container img{
+    rotate:y -180deg;
+    width: 100%;
+    
+    
+  }
+div.container {
+    position: relative;
+    background-color: #242d93;
+}
+
+div.container p {
+    position: absolute;
+    top: 26%;
+    left: 18%;
+    transform: translate(-50%, -50%);
+    color: #E9BD8C;
+    font-weight: 400;
+    font-size: clamp(0.8rem, 4vw, 1.8rem);
+    font-family: 'Sansita Swashed', cursive;
+  }
+div.container h1 {
+    position: absolute;
+    top: 40%;
+    left: 22%;
+    transform: translate(-50%, -50%); /* ajuste pour centrer exactement */
+    color: white;
+    font-weight: 400;
+    
+    font-size: clamp(1rem, 6.6vw, 2rem);
+
+    font-family: 'Sansita Swashed', cursive;
+  }
+div.container div.btn {
+    position: absolute;
+    top: 70%;
+    left: 16%;
+    transform: translate(-50%, -50%);
+}
+
+
+div.container div.btn a {
+    display: inline-block;
+    padding: 5% 8%;
+    background-color: #933C24;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: clamp(0.5rem, 3.8vw, 1.6rem);
+}
+h2.top {
+    white-space: nowrap;
+    position: absolute;
+    left: 50%;
+    margin-top: 10%;
+    transform: translate(-50%, -50%); /* ajuste pour centrer exactement */
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    font-size: clamp(1.5rem, 3.8vw, 2.8rem);
+    font-family: 'Sansita Swashed', cursive;
+  
+}
+
+section.top {
+    margin-top: 0;
+    
+    position: absolute;
+    top: 56vh;
+    left: 50%;
+    transform: translate(-50%,0);
+    
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+
+section.top div.flex {
+    margin-top: 15px;
+    position: relative;
+    background-image: url(fond.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex: 1;
+    min-width: 310px;
+    max-width: 430px;
+    border-radius: 3%;
+    height: 84vw;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+div.pain img.janbon{
+    width: 45%;
+    position: absolute;
+    top: 27%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* ajuste pour centrer exactement */
+    
+}
+div.pain img.feuille{
+    width: 68%;
+    position: absolute;
+    top: 27%;
+    left: 58%;
+    transform: translate(-50%, -50%); /* ajuste pour centrer exactement */
+    
+}
+div.pain img.bagette{
+    width: 70%;
+    rotate: -20deg;
+    position: absolute;
+    top: 12%;
+    left: 58%;
+    transform: translate(-50%, -50%); /* ajuste pour centrer exactement */
+    
+}
+div.pain img.miche{
+    width: 58%;
+    position: absolute;
+    top: 32%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* ajuste pour centrer exactement */
+    
+}
+div.pain img.gfeuille{
+    width: 66%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* ajuste pour centrer exactement */
+    
+}
+div.pain img.pmich{
+    width: 50%;
+    position: absolute;
+    top: 32%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* ajuste pour centrer exactement */
+    
+}
+div.pain div.add {
+    position: absolute;
+    top: 88%;
+    left: 77%;
+    transform: translate(-50%, -50%);
+}
+
+ div.pain div.add a {
+    display: inline-block;
+    padding: 20% 16%;
+    background-color: #933C24;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 110%;
+}
+div.pain p.nom {
+    color:rgb(255, 255, 255);
+    position: absolute;
+    top: 65%;
+    left: 10%;
+    font-size: 140%;
+}
+div.pain p.prix {
+    color:rgb(255, 255, 255);
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    font-size: 140%;
+}
+div.pain img.info{
+    width: 9%;
+    position: absolute;
+    top: 65%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+}
+section.promo{
+    position: absolute;
+    top:650vw;
+    width: 100%;
+    height: 100vw;
+    background-image: url(fondpromo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: 55%;
+}
+section.promo h2 {
+        white-space: nowrap;
+    position: absolute;
+    left: 50%;
+    margin-top: 10%;
+    transform: translate(-50%, -50%); /* ajuste pour centrer exactement */
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    font-size: clamp(1.5rem, 3.8vw, 2.8rem);
+    font-family: 'Sansita Swashed', cursive;
+  
+    color:#933C24;
+    margin-top: 28%;
+    text-align: center;
+    font-size: clamp(1.2rem, 3.8vw, 2.8rem);
+    
+}
+section.promo p {
+    color:#5D5D5D;
+    margin-top: 48%;
+    text-align: center;
+    font-size: clamp(1rem, 3.8vw, 2.8rem);
+    
+}
+
+section.promo div.btn {
+    
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-70%, -50%);
+}
+
+
+section.promo div.btn a {
+    
+    white-space: nowrap;
+    display: inline-block;
+    padding: 16% 20%;
+    background-color: #933C24;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: clamp(1.1rem, 3.8vw, 1.6rem);
+}
+
+h2.dec {
+        white-space: nowrap;
+    position: absolute;
+    left: 50%;
+    top: 750vw;
+    margin-top: 10%;
+    transform: translate(-50%, -50%); /* ajuste pour centrer exactement */
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    font-size: clamp(1.5rem, 3.8vw, 2.8rem);
+    font-family: 'Sansita Swashed', cursive;
+  
+}
+
+section.decouvert {
+    position: absolute;
+    top: 765vw;
+    display: flex;
+    justify-content:space-around;
+    
+}
+div.deco {
+ 
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+
+
+div.deco hr {
+  position: absolute;
+  top: 420vh;
+  left: 5%;
+  width: 90%;
+  height: 1px;
+  background-color: #D9D9D9;
+  border: none;
+  transform: translate(-50%,-50);
+}
+
+
+section.decouvert a {
+    text-decoration: none;
+    color: #5D5D5D;
+    font-weight: 600;
+    margin: 4vw;
+}
+
+section.decou {
+    margin-top: 0;
+    
+    position: absolute;
+    top: 790vw;
+    left: 50%;
+    transform: translate(-50%,0);
+    
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+section.decou div {
+    margin-top: 30px;
+    position: relative;
+    background-image: url(mmuffin.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex: 1;
+    min-width: 240px;
+    max-width: 430px;
+    border-radius: 3%;
+    height: 240px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+section.decou div.flexm {
+    background-image: url(mmuffin.png);
+}
+
+section.decou div.flexc {
+    background-image: url(chess.png);
+}
+section.decou div.flexcr {
+    background-image: url(crumbl.png);
+}
+section.decou div.flexbu {
+    background-image: url(butter.png);
+}
+section.decou div.flexch {
+    background-image: url(choco.png);
+}
+section.decou div.flexch2 {
+    background-image: url(choco2.png);
+}
+
+section.propos{
+    position: absolute;
+    top:710vh;
+    width: 100%;
+    height: 100vw;
+    background-image: url(fond3.png);
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: 53%;
+}
+section.propos h2 {
+    white-space: nowrap;
+    position: absolute;
+    left: 50%;
+    
+    transform: translate(-50%, -50%); /* ajuste pour centrer exactement */
+    
+    font-weight: 600;
+    font-size: clamp(1.5rem, 3.8vw, 2.8rem);
+    font-family: 'Sansita Swashed', cursive;
+  
+    color:#ffffff;
+    margin-top: 18%;
+    text-align: center;
+    font-size: clamp(1.6rem, 3.8vw, 2.8rem);
+    
+}
+section.propos p {
+    transform: translate(0%, -50%); /* ajuste pour centrer exactement */
+    
+    color:#B9B9B9;
+    margin-top: 48%;
+    text-align: center;
+    font-size: clamp(1rem, 3.8vw, 2.8rem);
+    
+}
+
+section.propos div.btn {
+    
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-70%, -50%);
+}
+
+
+section.propos div.btn a {
+    
+    white-space: nowrap;
+    display: inline-block;
+    padding: 16% 20%;
+    background-color: #933C24;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: clamp(1.1rem, 3.8vw, 1.6rem);
+}
+h2.plaisire {
+    white-space: nowrap;
+    position: absolute;
+    top:765vh;
+    left: 50%;
+    margin-top: 10%;
+    transform: translate(-50%, -50%); /* ajuste pour centrer exactement */
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    font-size: clamp(1.5rem, 3.8vw, 2.8rem);
+    font-family: 'Sansita Swashed', cursive;
+  
+}
+section.plais {
+    margin-top: 0;
+    
+    position: absolute;
+    top: 768vh;
+    left: 50%;
+    transform: translate(-50%,0);
+    
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+section.plais div {
+    margin-top: 60px;
+    position: relative;
+    background-image: url(mmuffin.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex: 1;
+    min-width: 240px;
+    max-width: 430px;
+    border-radius: 3%;
+    height: 240px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+section.plais div.patefeuille {
+    background-image: url(patefeuille.png);
+    background-position-x: 90%;
+}
+section.plais div.donuts {
+    background-image: url(donuts.png);
+}
+section.plais div.brownies {
+    background-image: url(browni.png);
+    background-position-x: 90%;
+}
+
+p.pf {
+    position: absolute;
+    top: 818vh;
+    left: 12vw;
+    font-weight: 400;
+}
+p.pfe {
+    position: absolute;
+    top: 818vh;
+    left: 82vw;
+    font-weight: 400;
+}
+p.do {
+    position: absolute;
+    top: 868vh;
+    left: 12vw;
+    font-weight: 400;
+}
+p.doe {
+    position: absolute;
+    top: 868vh;
+    left: 82vw;
+    font-weight: 400;
+}
+p.br {
+    position: absolute;
+    top: 918vh;
+    left: 12vw;
+    font-weight: 400;
+}
+p.bre {
+    position: absolute;
+    top: 918vh;
+    left: 82vw;
+    font-weight: 400;
+}
+
+
+section.foot{
+    position: absolute;
+    top:930vh;
+    width: 100%;
+    height: 320vw;
+    
+    background-image: url(fond4.png);
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+section.foot img.logo {
+    position: absolute;
+    top: 12vh;
+    left: 50vw;
+    transform: translate(-50%,-50%);
+    height: 30vh;
+    width: auto;
+}
+section.foot h2 {
+    white-space: nowrap;
+    
+    transform: translate(-50%, -50%); /* ajuste pour centrer exactement */
+    
+    font-weight: 600;
+    color:#E9BD8C;
+    margin-top: 18%;
+    text-align: center;
+    
+}
+section.foot h2.suiv {
+    font-size: clamp(1rem, 3.8vw, 2.8rem);
+    
+    position: absolute;
+    left: 50%;
+    top:12vh;
+}
+section.foot img.reso {
+    position: absolute;
+    top: 28vh;
+    left: 50vw;
+    transform: translate(-50%,-50%);
+    height: auto;
+    width: 70vw;
+}
+div.lo hr {
+    width: 80vw;
+    position: absolute;
+    left:10vw;
+    top: 32vh;
+    color: #E9BD8D33;
+}
+section.foot h2.prop {
+    font-size: clamp(1.8rem, 3.8vw, 2.8rem);
+    
+    position: absolute;
+    left: 50%;
+    top:30vh;
+}
+section.foot p.num {
+    position: absolute;
+    top: 44vh;
+    left: 20vw;
+    font-weight: 400;
+    color:#ffffff;
+    font-size: clamp(1.2rem, 3.8vw, 2.8rem);
+}
+section.foot p.email {
+    position: absolute;
+    top: 50vh;
+    left: 20vw;
+    font-weight: 400;
+    color:#ffffff;
+    font-size: clamp(1.2rem, 3.8vw, 2.8rem);
+    
+}
+section.foot p.adrs {
+    position: absolute;
+    top: 56vh;
+    left: 20vw;
+    font-weight: 400;
+    color:#ffffff;
+    font-size: clamp(1.2rem, 3.8vw, 2.8rem);
+    
+}
+section.foot p.pos {
+    position: absolute;
+    top: 62vh;
+    left: 20vw;
+    font-weight: 400;
+    color:#ffffff;
+    font-size: clamp(1.2rem, 3.8vw, 2.8rem);
+    
+}
+
+section.foot h2.exp {
+    font-size: clamp(1.8rem, 3.8vw, 2.8rem);
+    
+    position: absolute;
+    left: 50%;
+    top:70vh;
+}
+
+section.foot p.acc {
+    position: absolute;
+    top: 84vh;
+    left: 20vw;
+    font-weight: 400;
+    color:#ffffff;
+    font-size: clamp(1.2rem, 3.8vw, 2.8rem);
+}
+section.foot p.blo {
+    position: absolute;
+    top: 90vh;
+    left: 20vw;
+    font-weight: 400;
+    color:#ffffff;
+    font-size: clamp(1.2rem, 3.8vw, 2.8rem);
+}
+section.foot p.con {
+    position: absolute;
+    top: 96vh;
+    left: 20vw;
+    font-weight: 400;
+    color:#ffffff;
+    font-size: clamp(1.2rem, 3.8vw, 2.8rem);
+}
+section.foot p.ser {
+    position: absolute;
+    top: 102vh;
+    left: 20vw;
+    font-weight: 400;
+    color:#ffffff;
+    font-size: clamp(1.2rem, 3.8vw, 2.8rem);
+}
+section.foot h2.act {
+    font-size: clamp(1.8rem, 3.8vw, 2.8rem);
+    
+    position: absolute;
+    left: 50%;
+    top:108vh;
+}
+section.foot img.newdes {
+    position: absolute;
+    top: 128vh;
+    left: 13vw;
+    
+    height: auto;
+    width: 30vw;
+}
+section.foot img.painrai {
+    position: absolute;
+    top: 143vh;
+    left: 13vw;
+    
+    height: auto;
+    width: 30vw;
+}
+section.foot p.new {
+    position: absolute;
+    top: 128vh;
+    left: 50vw;
+    font-weight: 600;
+    color:#ffffff;
+    font-size: clamp(1.2rem, 3.8vw, 2.8rem);
+}
+section.foot p.pai {
+    position: absolute;
+    top: 143.5vh;
+    left: 50vw;
+    font-weight: 600;
+    color:#ffffff;
+    font-size: clamp(1.2rem, 3.8vw, 2.8rem);
+}
+section.foot p.dat1 {
+    position: absolute;
+    top: 124.5vh;
+    left: 50vw;
+    font-weight: 100;
+    color:#E9BD8C;
+    font-size: clamp(1rem, 3.8vw, 2.8rem);
+}
+section.foot p.dat2 {
+    position: absolute;
+    top: 139.5vh;
+    left: 50vw;
+    font-weight: 100;
+    color:#E9BD8C;
+    font-size: clamp(1rem, 3.8vw, 2.8rem);
+}
+section.foot p.cre {
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 162vh;
+    left: 50vw;
+    font-weight: 100;
+    color:#737373;
+    font-size: clamp(0.9rem, 3.8vw, 2.8rem);
+}
+div.btn a:hover{
+    transform: scale(1.1) ;
+
+
+    transition: transform 0.3s ease;
+}
+div.btn a{
+        transition: transform 0.7s ease;
+
+}
+div.add a:hover{
+    transform: scale(1.1) ;
+
+
+    transition: transform 0.3s ease;
+}
+div.add a{
+    transition: transform 0.7s ease;
+}
+.rectangle {
+    position: absolute;
+  top: 420vh;
+  left: 3vw;
+  width: 20vw;   /* largeur */
+  height: 6px;   /* hauteur */
+  background-color: #933C24;  /* couleur du rectangle */
+  border-radius: 5px;         /* coins légèrement arrondis (optionnel) */
+}
