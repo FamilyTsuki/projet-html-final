@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
   background-color: #fff;
   overflow-x: hidden;
 }
@@ -10,7 +10,7 @@ header {
   
    z-index: 10;
   background: white;
-max-height: 14vw;
+  max-height: 14vw;
 }
 
 header img {
@@ -33,13 +33,13 @@ header img {
   text-align: center;
   transform: translate(64vw,0.5vw);
   padding: 10px;
-   z-index: 20;
-   transition: 0.7s;
+  z-index: 20;
+  transition: 0.7s;
 }
 
 nav.bg {
   position: relative;
-   z-index: 20;
+  z-index: 20;
   display: flex;
   flex-direction: column;
   background: rgb(0, 0, 0);
@@ -49,6 +49,7 @@ nav.bg {
   transition: 0.7s;
 }
 nav.bg a {
+  font-family:'Poppins' ,Arial;
   color: white;
   text-decoration: none;
   padding: 10px;
@@ -82,11 +83,21 @@ nav.bg a:hover {
 }
 
 
-@media (min-width: 720px) {
-  header {
-    display: none;
-  }
+
+nav.pc {
+  display: none;
 }
+nav.pc a.acceuil {
+  color: #E9BD8C;
+}
+
+nav.pc a:hover {
+  background-color: #ffdeb9;
+  color: white;
+  transform: scale(1.05);
+}
+
+
 
 section.hero {
   position: relative;
@@ -106,61 +117,11 @@ section.hero img.logo {
   position: absolute;
   top: 0px;
   left: 5vw;
-   display: none; /* au lieu de flex */
-   width: 14vw;
-   
-
-   
-}
-nav.pc {
-  display: none;
-}
-@media (min-width: 720px) {
-  nav.pc {
-    display: none;
-    position: absolute;
-    top: 4vw;
-    left: 20vw;
-    height: 60px;
-    
-    display: flex;
-    align-items: center;
-    justify-content: space-around; /* <-- espace les liens uniformément */
-    z-index: 999;
-    font-weight: 600;
-    font-size: 1.4rem;
-    transition: all 0.3s ease;
-  }
-
-  nav.pc a {
-    text-decoration: none;
-    color: #ffffff;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    font-size: 2vw;
-    transition: all 0.3s ease;
-  }
-}
-nav.pc a.acceuil {
-  color: #E9BD8C;
-}
-
-nav.pc a:hover {
-  background-color: #ffdeb9;
-  color: white;
-  transform: scale(1.05);
+   display: none;
+   width: 14vw;   
 }
 
 
-
-@media (min-width: 720px) {
-  section.hero img.logo {
-    display: block; /* ou none si tu veux le cacher */
-  }
-  nav.pc {
-   display: flex;
-  }
-}
 section.hero div.hero-text {
   position: absolute;
   top: 50%;
@@ -168,10 +129,10 @@ section.hero div.hero-text {
   transform: translateY(-50%);
   color: white;
   text-align: left;
-
 }
 
 section.hero div.hero-text p {
+  
   color: #E9BD8C;
   font-size: 3vw;
 }
@@ -183,7 +144,7 @@ section.hero div.hero-text h1 {
   margin: 0.5rem 0;
 }
 
-.bob {
+.btncom {
   margin-top: 13vh;
   margin-left: 6vw;
   font-size: 2.5vw;
@@ -196,7 +157,7 @@ section.hero div.hero-text h1 {
   text-decoration: none;
   transition: transform 0.3s ease;
 }
-.bob:hover {
+.btncom:hover {
   transform: scale(1.1);
   transition: transform 0.3s ease;
   
@@ -220,41 +181,30 @@ section.top h2 {
 section.top div.produits {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  justify-content: center; /* centrer les colonnes si elles ne remplissent pas tout */
+  justify-content: center;
   gap: 1.5rem;
 }
 
 
 
-/* Conteneur des produits */
 section.top div.produits {
   display: grid;
   gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(23vw, 1fr));
-  justify-content: center; /* centrer si moins de colonnes */
+  justify-content: center;
 }
 
-/* Chaque produit */
 section.top div.produits div.pain {
   background-image: url(fond.png);
   background-size: cover;
  
-  height: auto; /* ou garder un ratio si tu veux */
+  height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   padding: 1rem;
   color: white;
   position: relative;
-
-  /* carré parfait comme ton dernier grid */
   aspect-ratio: 1 / 1;
-}
-
-/* Media query pour mobile/desktop */
-@media (max-width: 720px) {
-  section.top div.produits {
-    grid-template-columns: 1fr; /* une seule colonne sur mobile */
-  }
 }
 
 
@@ -312,13 +262,7 @@ section.top div.produits div.pain a.add {
   transition: transform 0.3s ease;
   transform: translatex(-50%);
 }
-@media (min-width: 720px) {
-  section.top div.produits div.pain a.add {
-  padding: 0.7rem 1rem;
-  font-size: 1.5vw;
-  
-}
-}
+
 section.top div.produits div.pain a.add:hover {
   transform: scale(1.1);
 }
@@ -392,6 +336,7 @@ section.decouvert div.choix {
 }
 
 section.decouvert div.choix a {
+  font-family: 'Poppins';
   color: #5D5D5D;
   text-decoration: none;
   font-size: 21px;
@@ -448,30 +393,6 @@ section.decou div.grid-decou div.flexch2{
 }
 
 
-@media (min-width: 720px) {
-  section.decou div.grid-decou {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* ✅ s’adapte automatiquement */
-  gap: 1.25rem;
-  justify-items: center;
-    
-  }
-  section.decou div.grid-decou > div {
-    width: 23vw;
-    height: 23vw;
-  }
-}
-
-
-@media (min-width: 1100px) {
-  section.decou div.grid-decou {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  section.decou div.grid-decou > div {
-    width: 23vw;
-    height: 23vw;
-  }
-}
-
 
 section.propos {
   margin-top: 1rem;
@@ -520,8 +441,6 @@ section.plaisirs h2 {
   font-weight: 900;
 }
 
-/* conteneur global */
-/* Conteneur global des plaisirs */
 section.plaisirs div.galerie {
   display: grid;
   gap: 1.1rem;
@@ -530,31 +449,9 @@ section.plaisirs div.galerie {
   align-items: stretch;
 }
 
-
-/* Chaque carte plaisir */
 section.plaisirs div.galerie div.item1,
 section.plaisirs div.galerie div.item2,
 section.plaisirs div.galerie div.item3 {
-  background-size: cover;
-  background-position: center;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  overflow: hidden;
-  width: 100%; 
-  aspect-ratio: 1 / 1; /* carré parfait */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Mobile */
-@media (max-width: 720px) {
-  section.plaisirs div.galerie {
-    grid-template-columns: 1fr; /* une seule colonne */
-  }
-}
-section.plaisirs div.galerie div.item1,
-section.plaisirs div.galerie div.item2,
-section.plaisirs div.galerie div.item3 {
-  position: relative; /* on peut garder si nécessaire pour d'autres éléments */
   background-size: cover;
   background-position: center;
   border-radius: 12px;
@@ -563,9 +460,24 @@ section.plaisirs div.galerie div.item3 {
   width: 100%; 
   aspect-ratio: 1 / 1;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: block; /* s'assure que c'est un bloc vertical */
 }
-/* chaque carte */
+
+
+section.plaisirs div.galerie div.item1,
+section.plaisirs div.galerie div.item2,
+section.plaisirs div.galerie div.item3 {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  width: 100%; 
+  aspect-ratio: 1 / 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block; 
+}
+
 section.plaisirs div.galerie div.item1 {
   background-image: url(patefeuille.png);
   background-repeat: no-repeat;
@@ -601,18 +513,16 @@ section.plaisirs div.galerie div.item3 {
 }
 
 
-
-/* Texte sous la carte */
 section.plaisirs .info {
-  position: static; /* plus de absolute */
+  position: static;
 
   color: rgb(0, 0, 0);
-  padding: 0.5rem 1rem;
-  margin-top: 0.5rem; /* espace entre la carte et le texte */
+  
+  margin-top: 0.5rem; 
   display: flex;
   justify-content: space-between;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1;
   box-sizing: border-box;
   border-radius: 8px;
 }
@@ -639,9 +549,9 @@ footer.foot {
 
 .foot-logo img {
   width: 69vw;
-  height: 45.5vw; /* fixe une hauteur pour pouvoir rogner */
-  object-fit: cover; /* garde les proportions */
-  object-position: top; /* affiche le haut de l’image, “coupe” le bas */
+  height: 45.5vw;
+  object-fit: cover;
+  object-position: top;
   margin-bottom: 5rem;
   overflow: hidden;
 }
@@ -696,18 +606,10 @@ hr.logo {
 }
 
 
-.footer-section p {
-  color: #fff;
-  font-size: 2rem;
-  font-weight: 500;
-  line-height: 1.8;
-  margin: 0;
-  text-align: left;
-  width: 80vw;
-}
 
 
 .footer-section a {
+  font-family: 'Poppins';
   color: white;
   text-decoration: none;
 
@@ -734,6 +636,7 @@ hr.logo {
 .footer-section li {
   margin: 0.3rem 0;
   font-size: 1.2rem;
+  font-family: 'Poppins';
 }
 
 
@@ -744,7 +647,7 @@ hr.logo {
   justify-content: flex-start;
   
   margin-bottom: 1rem;
-  padding-left: 26vw;
+  transform: translateX(-50%);
 }
 
 
@@ -756,6 +659,7 @@ hr.logo {
 }
 
 .actu .date {
+  font-family: 'Poppins';
   color: #E9BD8C;
   font-size: 1.6rem;
   margin-left: 6vw;
@@ -766,6 +670,7 @@ hr.logo {
 }
 
 .actu .titre {
+  font-family: 'Poppins';
   color: #fff;
   margin-top: -35px;
   padding-left: 7vw;
@@ -774,10 +679,9 @@ hr.logo {
 }
 
 
-/* Conteneur des 3 sections à aligner */
 .footer-sections-container {
   display: flex;
-  flex-direction: column; /* mobile : empilées */
+  flex-direction: column;
   align-items: center;
   gap: 2rem;
   width: 100%;
@@ -785,66 +689,66 @@ hr.logo {
 
 @media (min-width: 920px) {
   .footer-sections-container {
-    flex-direction: row; /* horizontal sur PC */
-    justify-content: space-between; /* espace équitable */
+    flex-direction: row; 
+    justify-content: space-between;
     align-items: flex-start;
   }
 
   .footer-section {
-    max-width: 30%; /* chaque section prend environ 1/3 */
+    max-width: 30%;
     text-align: left;
   }
   .actu .news-item {
-  margin-top: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 0.5rem; /* garde un petit écart entre l'image et le texte */
-  margin-bottom: 1rem;
-  margin-left: -100px;
-  padding-left: 0; /* <-- ici */
-}
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    
+    padding-left: 0;
+  }
 
 
-.actu img {
-  width: 10vw;
-  
-  object-fit: cover;
-  border-radius: 6px;
-}
+  .actu img {
+    width: 10vw;
+    
+    object-fit: cover;
+    border-radius: 6px;
+  }
 
-.actu .date {
-  color: #E9BD8C;
-  font-size: 1.8vw;
-  margin-left: 2.5vw;
-  margin-top: -1rem;
-  margin-bottom: 1rem;
+  .actu .date {
+    color: #E9BD8C;
+    font-size: 1.8vw;
+    margin-left: 2.5vw;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
 
-  
-}
+    
+  }
 
-.actu .titre {
-  color: #fff;
-  margin-top: -35px;
-  padding-left: 3vw;
-  font-size: 2.5vw;
-  font-weight: 500;
-}
-.foot-logo img {
-  
-  margin-left: -80vw;
-  width: 29vw;
-  height: 15.5vw; /* fixe une hauteur pour pouvoir rogner */
-  object-fit: cover; /* garde les proportions */
-  object-position: top; /* affiche le haut de l’image, “coupe” le bas */
-  
-  margin-bottom: 5rem;
-  overflow: hidden;
-}
+  .actu .titre {
+    color: #fff;
+    margin-top: -35px;
+    padding-left: 3vw;
+    font-size: 2.5vw;
+    font-weight: 500;
+  }
+  .foot-logo img {
+    
+    margin-left: -80vw;
+    width: 29vw;
+    height: 15.5vw;
+    object-fit: cover;
+    object-position: top;
+    
+    margin-bottom: 5rem;
+    overflow: hidden;
+  }
 }
 @media (min-width: 920px) {
   .social {
-    position: relative; /* le détache du flux normal */
+    position: relative;
     top:-18vh;
     left: 30vw;
     margin-bottom: -5rem;
@@ -861,20 +765,101 @@ hr.logo {
   }
 
   .icons {
-    justify-content: flex-end; /* icônes alignées à droite */
+    justify-content: flex-end;
     gap: 0.8rem;
   }
 
   .icons img {
-    width: 6vw; /* icônes plus petites sur PC */
+    width: 6vw;
   }
   .footer-section h3 {
   
-  font-size: 7wv;
+    font-size: 7wv;
+  
+  }
+}
+
+@media (min-width: 720px) {
+  section.hero img.logo {
+    display: block;
+  }
+  nav.pc {
+    display: flex;
+  }
+}
+
+@media (min-width: 720px) {
+  nav.pc {
+    display: none;
+    position: absolute;
+    top: 4vw;
+    left: 20vw;
+    height: 60px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 999;
+    font-weight: 600;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+  }
+
+  nav.pc a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 2vw;
+    transition: all 0.3s ease;
+  }
+}
+@media (min-width: 720px) {
+  header {
+    display: none;
+  }
+}
+@media (max-width: 720px) {
+  section.top div.produits {
+    grid-template-columns: 1fr;
+  }
+}
+@media (min-width: 720px) {
+  section.top div.produits div.pain a.add {
+    padding: 0.7rem 1rem;
+    font-size: 1.5vw;
   
 }
 }
+@media (min-width: 720px) {
+  section.decou div.grid-decou {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.25rem;
+    justify-items: center;
+    
+  }
+  section.decou div.grid-decou > div {
+    width: 23vw;
+    height: 23vw;
+  }
+}
 
+
+@media (min-width: 1100px) {
+  section.decou div.grid-decou {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  section.decou div.grid-decou > div {
+    width: 23vw;
+    height: 23vw;
+  }
+}
+@media (max-width: 720px) {
+  section.plaisirs div.galerie {
+    grid-template-columns: 1fr;
+  }
+  
+}
 
 .copy {
   font-size: 1.5rem;
