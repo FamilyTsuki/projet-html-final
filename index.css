@@ -10,10 +10,11 @@ header {
   
    z-index: 10;
   background: white;
-max-height: 80px;
+max-height: 14vw;
 }
 
 header img {
+  margin-top: -3vw;
   height: 20vw;
   width: auto;
 }
@@ -24,7 +25,7 @@ header img {
 
 #hamburger-logo {
   cursor: pointer;
-  background: rgb(255, 255, 255);
+ 
   width: 10vw;
   display: block;
   color: white;
@@ -109,29 +110,36 @@ section.hero img.logo {
    width: 14vw;
    
 
+   
 }
 nav.pc {
   display: none;
-  position: absolute;
-  top: 4vw;
-  left: 20vw;
-  height: 60px;
-  
-  display: flex;
-  align-items: center;
-  justify-content: space-around; /* <-- espace les liens uniformément */
-  z-index: 999;
-  font-weight: 600;
-  font-size: 1.4rem;
-  transition: all 0.3s ease;
 }
+@media (min-width: 720px) {
+  nav.pc {
+    display: none;
+    position: absolute;
+    top: 4vw;
+    left: 20vw;
+    height: 60px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-around; /* <-- espace les liens uniformément */
+    z-index: 999;
+    font-weight: 600;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+  }
 
-nav.pc a {
-  text-decoration: none;
-  color: #ffffff;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  transition: all 0.3s ease;
+  nav.pc a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 2vw;
+    transition: all 0.3s ease;
+  }
 }
 nav.pc a.acceuil {
   color: #E9BD8C;
@@ -292,16 +300,24 @@ section.top div.produits div.pain p.prix {
 section.top div.produits div.pain a.add {
    position: absolute;
   top: 80%;
-  left: 70%;
+  left: 80%;
   display: inline-block;
   background-color: #933C24;
   color: white;
   padding: 0.7rem 1rem;
-  font-size: 1vw;
+  font-size: 4.5vw;
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
   transition: transform 0.3s ease;
+  transform: translatex(-50%);
+}
+@media (min-width: 720px) {
+  section.top div.produits div.pain a.add {
+  padding: 0.7rem 1rem;
+  font-size: 1.5vw;
+  
+}
 }
 section.top div.produits div.pain a.add:hover {
   transform: scale(1.1);
@@ -434,8 +450,9 @@ section.decou div.grid-decou div.flexch2{
 
 @media (min-width: 720px) {
   section.decou div.grid-decou {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* ✅ s’adapte automatiquement */
+  gap: 1.25rem;
+  justify-items: center;
     
   }
   section.decou div.grid-decou > div {
@@ -666,7 +683,7 @@ hr.logo {
   margin-bottom: 1rem;
 }
 .footer-section {
-  
+  width: 26vw;
   text-align: center;
   
 }
@@ -725,15 +742,14 @@ hr.logo {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 0.5rem; /* garde un petit écart entre l'image et le texte */
+  
   margin-bottom: 1rem;
-  margin-left: -100px;
-  padding-left: 0; /* <-- ici */
+  padding-left: 26vw;
 }
 
 
 .actu img {
-  width: 10vw;
+  width: 26vw;
   
   object-fit: cover;
   border-radius: 6px;
@@ -752,7 +768,7 @@ hr.logo {
 .actu .titre {
   color: #fff;
   margin-top: -35px;
-  padding-left: 3vw;
+  padding-left: 7vw;
   font-size: 2.1rem;
   font-weight: 500;
 }
@@ -767,7 +783,7 @@ hr.logo {
   width: 100%;
 }
 
-@media (min-width: 720px) {
+@media (min-width: 920px) {
   .footer-sections-container {
     flex-direction: row; /* horizontal sur PC */
     justify-content: space-between; /* espace équitable */
@@ -778,7 +794,87 @@ hr.logo {
     max-width: 30%; /* chaque section prend environ 1/3 */
     text-align: left;
   }
+  .actu .news-item {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem; /* garde un petit écart entre l'image et le texte */
+  margin-bottom: 1rem;
+  margin-left: -100px;
+  padding-left: 0; /* <-- ici */
 }
+
+
+.actu img {
+  width: 10vw;
+  
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.actu .date {
+  color: #E9BD8C;
+  font-size: 1.8vw;
+  margin-left: 2.5vw;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+
+  
+}
+
+.actu .titre {
+  color: #fff;
+  margin-top: -35px;
+  padding-left: 3vw;
+  font-size: 2.5vw;
+  font-weight: 500;
+}
+.foot-logo img {
+  
+  margin-left: -80vw;
+  width: 29vw;
+  height: 15.5vw; /* fixe une hauteur pour pouvoir rogner */
+  object-fit: cover; /* garde les proportions */
+  object-position: top; /* affiche le haut de l’image, “coupe” le bas */
+  
+  margin-bottom: 5rem;
+  overflow: hidden;
+}
+}
+@media (min-width: 920px) {
+  .social {
+    position: relative; /* le détache du flux normal */
+    top:-18vh;
+    left: 30vw;
+    margin-bottom: -5rem;
+  }
+
+  .social p {
+    position: relative;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+
+    top:8.5vh;
+    left: -23vw;
+
+  }
+
+  .icons {
+    justify-content: flex-end; /* icônes alignées à droite */
+    gap: 0.8rem;
+  }
+
+  .icons img {
+    width: 6vw; /* icônes plus petites sur PC */
+  }
+  .footer-section h3 {
+  
+  font-size: 7wv;
+  
+}
+}
+
 
 .copy {
   font-size: 1.5rem;
