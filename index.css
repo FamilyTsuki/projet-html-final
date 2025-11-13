@@ -504,13 +504,50 @@ section.plaisirs h2 {
 }
 
 /* conteneur global */
+/* Conteneur global des plaisirs */
 section.plaisirs div.galerie {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
   gap: 1.1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-content: center;
+  align-items: stretch;
 }
 
+
+/* Chaque carte plaisir */
+section.plaisirs div.galerie div.item1,
+section.plaisirs div.galerie div.item2,
+section.plaisirs div.galerie div.item3 {
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  width: 100%; 
+  aspect-ratio: 1 / 1; /* carré parfait */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Mobile */
+@media (max-width: 720px) {
+  section.plaisirs div.galerie {
+    grid-template-columns: 1fr; /* une seule colonne */
+  }
+}
+section.plaisirs div.galerie div.item1,
+section.plaisirs div.galerie div.item2,
+section.plaisirs div.galerie div.item3 {
+  position: relative; /* on peut garder si nécessaire pour d'autres éléments */
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  width: 100%; 
+  aspect-ratio: 1 / 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block; /* s'assure que c'est un bloc vertical */
+}
 /* chaque carte */
 section.plaisirs div.galerie div.item1 {
   background-image: url(patefeuille.png);
@@ -518,8 +555,7 @@ section.plaisirs div.galerie div.item1 {
     background-size: cover;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  width: 80vw;
-  height: 80vw;
+
   background-position-x: 100%;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -530,8 +566,7 @@ section.plaisirs div.galerie div.item2 {
     background-size: cover;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  width: 80vw;
-  height: 80vw;
+ background-position-x: 0;
   
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -542,8 +577,7 @@ section.plaisirs div.galerie div.item3 {
     background-size: cover;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  width: 80vw;
-  height: 80vw;
+
   background-position-x: 85%;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -551,23 +585,21 @@ section.plaisirs div.galerie div.item3 {
 
 
 
+/* Texte sous la carte */
 section.plaisirs .info {
+  position: static; /* plus de absolute */
+
+  color: rgb(0, 0, 0);
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem; /* espace entre la carte et le texte */
   display: flex;
-  width: 78vw;
-  margin-top: -10px;
-  font-size: 1.3rem;
-  justify-content: space-between; /* garde un grand espace entre les deux */
-  transition: transform 0.3s ease;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 1rem;
+  box-sizing: border-box;
+  border-radius: 8px;
 }
 
-section.plaisirs .nom {
-  font-weight: 600;
-}
-
-section.plaisirs .prix {
-  font-weight: 600;
-  color: #333;
-}
 
 
 footer.foot {
@@ -693,13 +725,15 @@ hr.logo {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 0.2rem;
+  gap: 0.5rem; /* garde un petit écart entre l'image et le texte */
   margin-bottom: 1rem;
-  padding-left: 24vw;
+  margin-left: -100px;
+  padding-left: 0; /* <-- ici */
 }
 
+
 .actu img {
-  width: 26vw;
+  width: 10vw;
   
   object-fit: cover;
   border-radius: 6px;
@@ -718,11 +752,33 @@ hr.logo {
 .actu .titre {
   color: #fff;
   margin-top: -35px;
-  padding-left: 7vw;
+  padding-left: 3vw;
   font-size: 2.1rem;
   font-weight: 500;
 }
 
+
+/* Conteneur des 3 sections à aligner */
+.footer-sections-container {
+  display: flex;
+  flex-direction: column; /* mobile : empilées */
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+@media (min-width: 720px) {
+  .footer-sections-container {
+    flex-direction: row; /* horizontal sur PC */
+    justify-content: space-between; /* espace équitable */
+    align-items: flex-start;
+  }
+
+  .footer-section {
+    max-width: 30%; /* chaque section prend environ 1/3 */
+    text-align: left;
+  }
+}
 
 .copy {
   font-size: 1.5rem;
