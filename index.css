@@ -211,23 +211,44 @@ section.top h2 {
 
 section.top div.produits {
   display: grid;
-  flex-wrap: wrap;
-  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center; /* centrer les colonnes si elles ne remplissent pas tout */
   gap: 1.5rem;
-  
 }
 
+
+
+/* Conteneur des produits */
+section.top div.produits {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(23vw, 1fr));
+  justify-content: center; /* centrer si moins de colonnes */
+}
+
+/* Chaque produit */
 section.top div.produits div.pain {
   background-image: url(fond.png);
   background-size: cover;
-  width: 84vw;
-  height: 74vw;
+ 
+  height: auto; /* ou garder un ratio si tu veux */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   padding: 1rem;
   color: white;
   position: relative;
+
+  /* carré parfait comme ton dernier grid */
+  aspect-ratio: 1 / 1;
 }
+
+/* Media query pour mobile/desktop */
+@media (max-width: 720px) {
+  section.top div.produits {
+    grid-template-columns: 1fr; /* une seule colonne sur mobile */
+  }
+}
+
 
 section.top div.produits div.pain img {
   height: 60%;
@@ -275,8 +296,8 @@ section.top div.produits div.pain a.add {
   display: inline-block;
   background-color: #933C24;
   color: white;
-  padding: 1rem 1rem;
-  font-size: 20px;
+  padding: 0.7rem 1rem;
+  font-size: 1vw;
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
@@ -295,17 +316,7 @@ section.top div.produits div.pain img.infor {
 section.top div.produits div.pain img.infor:hover {
   transform: scale(1.05) rotate(4deg);
 }
-@media (min-width: 720px) {
-  section.top div.produits > .pain {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-    
-  }
-  section.top div.produits > .pain {
-    width: 23vw;
-    height: 23vw;
-  }
-}
+
 section.promo {
   margin-top: 2.5rem;
   background-image: url(fondpromo.png);
