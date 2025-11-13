@@ -1,736 +1,659 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #ffffff;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  overflow-x: hidden;
+}
 
-  }
 header {
-    position: relative;
-    background-color: white;
-    width: 100vw;
-    height: 10vh;
+  display: flex;
+
+  
+  background: white;
+max-height: 80px;
+}
+
+
+
+#hamburger {
+  /* Pour que la checkbox ne s'affiche pas */
+  display: none;
+}
+
+#hamburger-logo {
+  /* Pour que le curseur soit un pointeur */
+  cursor: pointer;
+  background: rgb(255, 255, 255);
+  width: 10vw;
+  display: block;
+  color: white;
+  font-size: 8vw;
+  /* Pour que le menu hamburger s'affiche toujours */
+  text-align: center;
+  /* Pour que le menu hamburger soit "rangé" par défaut */
+  transform: translate(64vw,0.5vw);
+  padding: 10px;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  background: rgb(0, 0, 0);
+  overflow: hidden;
+  width: 200px;
+  /* Pour que les liens soient "rangés" par défaut */
+  transform: translateX(100vw);
+}
+
+#hamburger-logo,
+nav {
+  /* Pour qu'il y ait une animation */
+  transition: 0.7s;
+}
+
+/* Lorsque #hamburger est coché, le #hamburger-logo et le nav qui sont dans le même parent changent de propriété */
+#hamburger:checked ~ #hamburger-logo,
+#hamburger:checked ~ nav {
+  /* Changement de la position pour afficher les menus */
+  transform: translate(40vw,0.5vw);
+  
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+
+nav a:hover {
+  background: #444;
+}
+#hamburger-logo::before {
+  content: "☰"; /* hamburger */
+  color: #000000; /* par exemple une couleur dorée */
+
+}
+
+/* on cache le vrai texte du label */
+#hamburger-logo {
+  color: transparent;
+  position: relative;
+}
+#hamburger:checked + #hamburger-logo {
+  background-color: gray;
+}
+#hamburger:checked + #hamburger-logo::before {
+  content: "✖";
+  color: #000000; /* par exemple une couleur dorée */
+  
 }
 
 header img {
-    position: absolute;
-    top: 70%;
-    left: 1vw;
-    transform: translatey(-50%);
-    height: 100%;
-    width: auto;
+  height: 20vw;
+  width: auto;
 }
 
-
-
-div.container img{
-    rotate:y -180deg;
-    width: 100%;
-    
-    
-  }
-div.container {
-    position: relative;
-    background-color: #242d93;
+section.hero {
+  position: relative;
+  text-align: center;
+  background-color: #242d93;
+  z-index: -100;
 }
 
-div.container p {
-    position: absolute;
-    top: 26%;
-    left: 18%;
-    transform: translate(-50%, -50%);
-    color: #E9BD8C;
-    font-weight: 400;
-    font-size: clamp(0.8rem, 4vw, 1.8rem);
-    font-family: 'Sansita Swashed', cursive;
-  }
-div.container h1 {
-    position: absolute;
-    top: 40%;
-    left: 22%;
-    transform: translate(-50%, -50%); /* ajuste pour centrer exactement */
-    color: white;
-    font-weight: 400;
-    
-    font-size: clamp(1rem, 6.6vw, 2rem);
-
-    font-family: 'Sansita Swashed', cursive;
-  }
-div.container div.btn {
-    position: absolute;
-    top: 70%;
-    left: 16%;
-    transform: translate(-50%, -50%);
+section.hero img {
+  width: 100%;
+  rotate:y -180deg;
+  height: auto;
+  display: block;
 }
 
-
-div.container div.btn a {
-    display: inline-block;
-    padding: 5% 8%;
-    background-color: #933C24;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-    font-size: clamp(0.5rem, 3.8vw, 1.6rem);
+section.hero div.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  transform: translateY(-50%);
+  color: white;
+  text-align: left;
+  max-width: 300px;
 }
-h2.top {
-    white-space: nowrap;
-    position: absolute;
-    left: 50%;
-    margin-top: 10%;
-    transform: translate(-50%, -50%); /* ajuste pour centrer exactement */
-    color: rgb(0, 0, 0);
-    font-weight: 600;
-    font-size: clamp(1.5rem, 3.8vw, 2.8rem);
-    font-family: 'Sansita Swashed', cursive;
+
+section.hero div.hero-text p {
+  color: #E9BD8C;
+  font-size: 1.1rem;
+}
+
+section.hero div.hero-text h1 {
+  font-family: 'Sansita Swashed', cursive;
   
+  font-size: 1.8rem;
+  margin: 0.5rem 0;
 }
+
+section.hero div.hero-text a.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  background-color: #933C24;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+section.hero div.hero-text a.btn:hover {
+  transform: scale(1.1);
+}
+
 
 section.top {
-    margin-top: 0;
-    
-    position: absolute;
-    top: 56vh;
-    left: 50%;
-    transform: translate(-50%,0);
-    
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-}
-
-
-section.top div.flex {
-    margin-top: 15px;
-    position: relative;
-    background-image: url(fond.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    flex: 1;
-    min-width: 310px;
-    max-width: 430px;
-    border-radius: 3%;
-    height: 84vw;
-    box-sizing: border-box;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    overflow: hidden;
-}
-
-div.pain img.janbon{
-    width: 45%;
-    position: absolute;
-    top: 27%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* ajuste pour centrer exactement */
-    
-}
-div.pain img.feuille{
-    width: 68%;
-    position: absolute;
-    top: 27%;
-    left: 58%;
-    transform: translate(-50%, -50%); /* ajuste pour centrer exactement */
-    
-}
-div.pain img.bagette{
-    width: 70%;
-    rotate: -20deg;
-    position: absolute;
-    top: 12%;
-    left: 58%;
-    transform: translate(-50%, -50%); /* ajuste pour centrer exactement */
-    
-}
-div.pain img.miche{
-    width: 58%;
-    position: absolute;
-    top: 32%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* ajuste pour centrer exactement */
-    
-}
-div.pain img.gfeuille{
-    width: 66%;
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* ajuste pour centrer exactement */
-    
-}
-div.pain img.pmich{
-    width: 50%;
-    position: absolute;
-    top: 32%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* ajuste pour centrer exactement */
-    
-}
-div.pain div.add {
-    position: absolute;
-    top: 88%;
-    left: 77%;
-    transform: translate(-50%, -50%);
-}
-
- div.pain div.add a {
-    display: inline-block;
-    padding: 20% 16%;
-    background-color: #933C24;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 110%;
-}
-div.pain p.nom {
-    color:rgb(255, 255, 255);
-    position: absolute;
-    top: 65%;
-    left: 10%;
-    font-size: 140%;
-}
-div.pain p.prix {
-    color:rgb(255, 255, 255);
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    font-size: 140%;
-}
-div.pain img.info{
-    width: 9%;
-    position: absolute;
-    top: 65%;
-    left: 80%;
-    transform: translate(-50%, -50%);
-}
-section.promo{
-    position: absolute;
-    top:650vw;
-    width: 100%;
-    height: 100vw;
-    background-image: url(fondpromo.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-x: 55%;
-}
-section.promo h2 {
-        white-space: nowrap;
-    position: absolute;
-    left: 50%;
-    margin-top: 10%;
-    transform: translate(-50%, -50%); /* ajuste pour centrer exactement */
-    color: rgb(0, 0, 0);
-    font-weight: 600;
-    font-size: clamp(1.5rem, 3.8vw, 2.8rem);
-    font-family: 'Sansita Swashed', cursive;
+  text-align: center;
+  padding: 0.2rem 1rem;
   
-    color:#933C24;
-    margin-top: 28%;
-    text-align: center;
-    font-size: clamp(1.2rem, 3.8vw, 2.8rem);
-    
-}
-section.promo p {
-    color:#5D5D5D;
-    margin-top: 48%;
-    text-align: center;
-    font-size: clamp(1rem, 3.8vw, 2.8rem);
-    
 }
 
-section.promo div.btn {
-    
-    position: absolute;
+section.top h2 {
+  font-family: 'Sansita Swashed', cursive;
+  font-size: 2rem;
+  margin-bottom: 2.4rem;
+  font-weight: 800;
+}
+
+section.top div.produits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  
+}
+
+section.top div.produits div.pain {
+  background-image: url(fond.png);
+  background-size: cover;
+  width: 84vw;
+  height: 74vw;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 1rem;
+  color: white;
+  position: relative;
+}
+
+section.top div.produits div.pain img {
+  height: 60%;
+  width: auto;
+  display: block;
+  margin: 0 auto 1rem auto;
+}
+section.top div.produits div.pain img.jambon {
+  height: 90%;
+  margin-top: -4rem;
+}
+
+section.top div.produits div.pain img.feuille {
+  height: 56%;
+  width: 64%;
+  transform: translate(7%,8%);
+}
+section.top div.produits div.pain img.bag {
+  rotate: -20deg;
+}
+section.top div.produits div.pain img.mich {
+  height: 68%;
+  margin-top: -0.4rem;
+  
+}
+section.top div.produits div.pain p.nom {
+   position: absolute;
     top: 80%;
-    left: 50%;
-    transform: translate(-70%, -50%);
+    left: 10%;
+    font-size: 20px;
+  margin: 0.3rem 0;
+} 
+section.top div.produits div.pain p.prix {
+   position: absolute;
+  top: 65%;
+  left: 10%;
+  font-size: 20px;
+  margin: 0.3rem 0;
 }
 
-
-section.promo div.btn a {
-    
-    white-space: nowrap;
-    display: inline-block;
-    padding: 16% 20%;
-    background-color: #933C24;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-    font-size: clamp(1.1rem, 3.8vw, 1.6rem);
+section.top div.produits div.pain a.add {
+   position: absolute;
+  top: 80%;
+  left: 70%;
+  display: inline-block;
+  background-color: #933C24;
+  color: white;
+  padding: 1rem 1rem;
+  font-size: 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+section.top div.produits div.pain img.infor {
+   position: absolute;
+  top: 64%;
+  left: 76%;
+  height: 10%;
 }
 
-h2.dec {
-        white-space: nowrap;
-    position: absolute;
-    left: 50%;
-    top: 750vw;
-    margin-top: 10%;
-    transform: translate(-50%, -50%); /* ajuste pour centrer exactement */
-    color: rgb(0, 0, 0);
-    font-weight: 600;
-    font-size: clamp(1.5rem, 3.8vw, 2.8rem);
-    font-family: 'Sansita Swashed', cursive;
-  
+section.promo {
+  margin-top: 2.5rem;
+  background-image: url(fondpromo.png);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+section.promo h2 {
+  color: #933C24;
+  font-family: 'Sansita Swashed', cursive;
+  font-size: 1.9rem;
+  margin-top: 4rem;
+  margin-bottom: 5.6rem;
+  font-weight: 900;
+}
+
+section.promo p {
+  color: #5D5D5D;
+  margin: 1rem 0;
+  font-size: 1.4rem;
+  margin-bottom: 6rem;
+}
+section.promo a {
+  display: inline-block;
+  background-color: #933C24;
+  color: white;
+  padding: 1.6rem 2rem;
+  border-radius: 10px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  margin-bottom: 1rem;
+}
+section.promo a:hover {
+  transform: scale(1.1);
 }
 
 section.decouvert {
-    position: absolute;
-    top: 765vw;
-    display: flex;
-    justify-content:space-around;
-    
-}
-div.deco {
- 
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 9999;
+  text-align: center;
+  padding: 0.6rem 1rem;
 }
 
-
-
-div.deco hr {
-  position: absolute;
-  top: 420vh;
-  left: 5%;
-  width: 90%;
-  height: 1px;
-  background-color: #D9D9D9;
-  border: none;
-  transform: translate(-50%,-50);
+section.decouvert h2 {
+  font-family: 'Sansita Swashed', cursive;
+  font-size: 2rem;
 }
 
-
-section.decouvert a {
-    text-decoration: none;
-    color: #5D5D5D;
-    font-weight: 600;
-    margin: 4vw;
+section.decouvert div.choix {
+  margin-top: -1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
+section.decouvert div.choix a {
+  color: #5D5D5D;
+  text-decoration: none;
+  font-size: 21px;
+  font-weight: 600;
+  background: #ffffff;
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+}
+section.decouvert div.choix a:hover {
+  background: #ee9671;
+}
+hr {
+  color: #D9D9D9;
+  width: 90vw;
+  opacity: 0.5;
+}
 section.decou {
-    margin-top: 0;
-    
-    position: absolute;
-    top: 790vw;
-    left: 50%;
-    transform: translate(-50%,0);
-    
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
+  padding: 1rem 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
 }
-section.decou div {
-    margin-top: 30px;
-    position: relative;
-    background-image: url(mmuffin.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    flex: 1;
-    min-width: 240px;
-    max-width: 430px;
-    border-radius: 3%;
-    height: 240px;
-    box-sizing: border-box;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    overflow: hidden;
-}
-section.decou div.flexm {
-    background-image: url(mmuffin.png);
+section.decou div.grid-decou {
+  display: grid;
+  gap: 3rem;
 }
 
-section.decou div.flexc {
-    background-image: url(chess.png);
-}
-section.decou div.flexcr {
-    background-image: url(crumbl.png);
-}
-section.decou div.flexbu {
-    background-image: url(butter.png);
-}
-section.decou div.flexch {
-    background-image: url(choco.png);
-}
-section.decou div.flexch2 {
-    background-image: url(choco2.png);
+section.decou div.grid-decou > div {
+  border-radius: 8px;
+  width: 78vw;
+  height: 78vw;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
 }
 
-section.propos{
-    position: absolute;
-    top:710vh;
-    width: 100%;
-    height: 100vw;
-    background-image: url(fond3.png);
-    
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-x: 53%;
+
+section.decou div.grid-decou div.flexm  { 
+  background-image: url(mmuffin.png); 
 }
+section.decou div.grid-decou div.flexc  { 
+  background-image: url(chess.png); 
+}
+section.decou div.grid-decou div.flexcr { 
+  background-image: url(crumbl.png); 
+}
+section.decou div.grid-decou div.flexbu { 
+  background-image: url(butter.png); 
+}
+section.decou div.grid-decou div.flexch { 
+  background-image: url(choco.png); 
+}
+section.decou div.grid-decou div.flexch2{ 
+  background-image: url(choco2.png); 
+}
+
+
+@media (min-width: 720px) {
+  section.decou div.grid-decou {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    
+  }
+  section.decou div.grid-decou > div {
+    width: 23vw;
+    height: 23vw;
+  }
+}
+
+
+@media (min-width: 1100px) {
+  section.decou div.grid-decou {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  section.decou div.grid-decou > div {
+    width: 23vw;
+    height: 23vw;
+  }
+}
+
+
+section.propos {
+  margin-top: 1rem;
+  background-image: url(fond3.png);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 2.2rem 4.4rem;
+}
+
 section.propos h2 {
-    white-space: nowrap;
-    position: absolute;
-    left: 50%;
-    
-    transform: translate(-50%, -50%); /* ajuste pour centrer exactement */
-    
-    font-weight: 600;
-    font-size: clamp(1.5rem, 3.8vw, 2.8rem);
-    font-family: 'Sansita Swashed', cursive;
   
-    color:#ffffff;
-    margin-top: 18%;
-    text-align: center;
-    font-size: clamp(1.6rem, 3.8vw, 2.8rem);
-    
+  font-family: 'Sansita Swashed', cursive;
+  font-size: 1.8rem;
 }
+
 section.propos p {
-    transform: translate(0%, -50%); /* ajuste pour centrer exactement */
-    
-    color:#B9B9B9;
-    margin-top: 48%;
-    text-align: center;
-    font-size: clamp(1rem, 3.8vw, 2.8rem);
-    
+  font-size: 24px;
+  margin: 6rem 0;
+  color: #B9B9B9;
 }
 
-section.propos div.btn {
-    
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translate(-70%, -50%);
+section.propos a {
+  margin-bottom: 2rem;
+  display: inline-block;
+  background-color: #933C24;
+  color: white;
+  font-size: 23px;
+  padding: 1.6rem 3rem;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+section.plaisirs {
+  text-align: center;
+  padding: 0.6rem 1rem;
+}
+
+section.plaisirs h2 {
+  font-family: 'Sansita Swashed', cursive;
+  font-size: 2.2rem;
+  margin-bottom: 2.6rem;
+  font-weight: 900;
+}
+
+/* conteneur global */
+section.plaisirs div.galerie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+/* chaque carte */
+section.plaisirs div.galerie div.item1 {
+  background-image: url(patefeuille.png);
+  background-repeat: no-repeat;
+    background-size: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 80vw;
+  height: 80vw;
+  background-position-x: 100%;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+section.plaisirs div.galerie div.item2 {
+  background-image: url(donuts.png);
+  background-repeat: no-repeat;
+    background-size: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 80vw;
+  height: 80vw;
+  
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+section.plaisirs div.galerie div.item3 {
+  background-image: url(browni.png);
+  background-repeat: no-repeat;
+    background-size: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 80vw;
+  height: 80vw;
+  background-position-x: 85%;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 
-section.propos div.btn a {
-    
-    white-space: nowrap;
-    display: inline-block;
-    padding: 16% 20%;
-    background-color: #933C24;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-    font-size: clamp(1.1rem, 3.8vw, 1.6rem);
+section.plaisirs div.galerie div.item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
-h2.plaisire {
-    white-space: nowrap;
-    position: absolute;
-    top:765vh;
-    left: 50%;
-    margin-top: 10%;
-    transform: translate(-50%, -50%); /* ajuste pour centrer exactement */
-    color: rgb(0, 0, 0);
-    font-weight: 600;
-    font-size: clamp(1.5rem, 3.8vw, 2.8rem);
-    font-family: 'Sansita Swashed', cursive;
+
+
+section.plaisirs .info {
+  display: flex;
+  width: 78vw;
+  margin-top: -10px;
+  font-size: 1.3rem;
+  justify-content: space-between; /* garde un grand espace entre les deux */
+
+}
+
+section.plaisirs .nom {
+  font-weight: 600;
+}
+
+section.plaisirs .prix {
+  font-weight: 600;
+  color: #333;
+}
+
+
+footer.foot {
+  background: url('fond4.png') center/cover no-repeat;
+  color: #E9BD8C;
+  text-align: center;
+  padding: 0rem 1rem;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.foot-logo {
+  margin-top: -3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.foot-logo img {
+  width: 69vw;
+  height: 45.5vw; /* fixe une hauteur pour pouvoir rogner */
+  object-fit: cover; /* garde les proportions */
+  object-position: top; /* affiche le haut de l’image, “coupe” le bas */
+  margin-bottom: 5rem;
+  overflow: hidden;
+}
+
+
+
+.social {
+  margin-top: -5.2rem ;
+}
+
+.social p {
+  font-weight: bold;
+  font-size: 2.1rem;
+  
+  margin-bottom: 0.6rem;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.icons img {
+  width: 15vw;
+  transition: transform 0.3s ease;
+}
+
+.icons img:hover {
+  transform: scale(1.2);
+}
+
+hr.logo {
+  background-color:#E9BD8C;
+  width: 94vw;
+  height: 2px;
+  opacity: 0.2;
+  margin-bottom: 1rem;
+}
+.footer-section {
+  
+  text-align: center;
   
 }
-section.plais {
-    margin-top: 0;
-    
-    position: absolute;
-    top: 768vh;
-    left: 50%;
-    transform: translate(-50%,0);
-    
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-}
-section.plais div {
-    margin-top: 60px;
-    position: relative;
-    background-image: url(mmuffin.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    flex: 1;
-    min-width: 240px;
-    max-width: 430px;
-    border-radius: 3%;
-    height: 240px;
-    box-sizing: border-box;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    overflow: hidden;
-}
-section.plais div.patefeuille {
-    background-image: url(patefeuille.png);
-    background-position-x: 90%;
-}
-section.plais div.donuts {
-    background-image: url(donuts.png);
-}
-section.plais div.brownies {
-    background-image: url(browni.png);
-    background-position-x: 90%;
-}
 
-p.pf {
-    position: absolute;
-    top: 818vh;
-    left: 12vw;
-    font-weight: 400;
-}
-p.pfe {
-    position: absolute;
-    top: 818vh;
-    left: 82vw;
-    font-weight: 400;
-}
-p.do {
-    position: absolute;
-    top: 868vh;
-    left: 12vw;
-    font-weight: 400;
-}
-p.doe {
-    position: absolute;
-    top: 868vh;
-    left: 82vw;
-    font-weight: 400;
-}
-p.br {
-    position: absolute;
-    top: 918vh;
-    left: 12vw;
-    font-weight: 400;
-}
-p.bre {
-    position: absolute;
-    top: 918vh;
-    left: 82vw;
-    font-weight: 400;
+.footer-section h3 {
+  color: #E9BD8C;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
 
 
-section.foot{
-    position: absolute;
-    top:930vh;
-    width: 100%;
-    height: 320vw;
-    
-    background-image: url(fond4.png);
-    
-    background-repeat: no-repeat;
-    background-size: cover;
-    
-}
-section.foot img.logo {
-    position: absolute;
-    top: 12vh;
-    left: 50vw;
-    transform: translate(-50%,-50%);
-    height: 30vh;
-    width: auto;
-}
-section.foot h2 {
-    white-space: nowrap;
-    
-    transform: translate(-50%, -50%); /* ajuste pour centrer exactement */
-    
-    font-weight: 600;
-    color:#E9BD8C;
-    margin-top: 18%;
-    text-align: center;
-    
-}
-section.foot h2.suiv {
-    font-size: clamp(1rem, 3.8vw, 2.8rem);
-    
-    position: absolute;
-    left: 50%;
-    top:12vh;
-}
-section.foot img.reso {
-    position: absolute;
-    top: 28vh;
-    left: 50vw;
-    transform: translate(-50%,-50%);
-    height: auto;
-    width: 70vw;
-}
-div.lo hr {
-    width: 80vw;
-    position: absolute;
-    left:10vw;
-    top: 32vh;
-    color: #E9BD8D33;
-}
-section.foot h2.prop {
-    font-size: clamp(1.8rem, 3.8vw, 2.8rem);
-    
-    position: absolute;
-    left: 50%;
-    top:30vh;
-}
-section.foot p.num {
-    position: absolute;
-    top: 44vh;
-    left: 20vw;
-    font-weight: 400;
-    color:#ffffff;
-    font-size: clamp(1.2rem, 3.8vw, 2.8rem);
-}
-section.foot p.email {
-    position: absolute;
-    top: 50vh;
-    left: 20vw;
-    font-weight: 400;
-    color:#ffffff;
-    font-size: clamp(1.2rem, 3.8vw, 2.8rem);
-    
-}
-section.foot p.adrs {
-    position: absolute;
-    top: 56vh;
-    left: 20vw;
-    font-weight: 400;
-    color:#ffffff;
-    font-size: clamp(1.2rem, 3.8vw, 2.8rem);
-    
-}
-section.foot p.pos {
-    position: absolute;
-    top: 62vh;
-    left: 20vw;
-    font-weight: 400;
-    color:#ffffff;
-    font-size: clamp(1.2rem, 3.8vw, 2.8rem);
-    
+.footer-section p {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.8;
+  margin: 0;
+  text-align: left;
+  width: 80vw;
 }
 
-section.foot h2.exp {
-    font-size: clamp(1.8rem, 3.8vw, 2.8rem);
-    
-    position: absolute;
-    left: 50%;
-    top:70vh;
+
+.footer-section a {
+  color: white;
+  text-decoration: none;
+
+  line-height: 1.6;
+  font-size: 2rem;
+  
 }
 
-section.foot p.acc {
-    position: absolute;
-    top: 84vh;
-    left: 20vw;
-    font-weight: 400;
-    color:#ffffff;
-    font-size: clamp(1.2rem, 3.8vw, 2.8rem);
+.footer-section a:hover {
+  text-decoration: underline;
 }
-section.foot p.blo {
-    position: absolute;
-    top: 90vh;
-    left: 20vw;
-    font-weight: 400;
-    color:#ffffff;
-    font-size: clamp(1.2rem, 3.8vw, 2.8rem);
-}
-section.foot p.con {
-    position: absolute;
-    top: 96vh;
-    left: 20vw;
-    font-weight: 400;
-    color:#ffffff;
-    font-size: clamp(1.2rem, 3.8vw, 2.8rem);
-}
-section.foot p.ser {
-    position: absolute;
-    top: 102vh;
-    left: 20vw;
-    font-weight: 400;
-    color:#ffffff;
-    font-size: clamp(1.2rem, 3.8vw, 2.8rem);
-}
-section.foot h2.act {
-    font-size: clamp(1.8rem, 3.8vw, 2.8rem);
-    
-    position: absolute;
-    left: 50%;
-    top:108vh;
-}
-section.foot img.newdes {
-    position: absolute;
-    top: 128vh;
-    left: 13vw;
-    
-    height: auto;
-    width: 30vw;
-}
-section.foot img.painrai {
-    position: absolute;
-    top: 143vh;
-    left: 13vw;
-    
-    height: auto;
-    width: 30vw;
-}
-section.foot p.new {
-    position: absolute;
-    top: 128vh;
-    left: 50vw;
-    font-weight: 600;
-    color:#ffffff;
-    font-size: clamp(1.2rem, 3.8vw, 2.8rem);
-}
-section.foot p.pai {
-    position: absolute;
-    top: 143.5vh;
-    left: 50vw;
-    font-weight: 600;
-    color:#ffffff;
-    font-size: clamp(1.2rem, 3.8vw, 2.8rem);
-}
-section.foot p.dat1 {
-    position: absolute;
-    top: 124.5vh;
-    left: 50vw;
-    font-weight: 100;
-    color:#E9BD8C;
-    font-size: clamp(1rem, 3.8vw, 2.8rem);
-}
-section.foot p.dat2 {
-    position: absolute;
-    top: 139.5vh;
-    left: 50vw;
-    font-weight: 100;
-    color:#E9BD8C;
-    font-size: clamp(1rem, 3.8vw, 2.8rem);
-}
-section.foot p.cre {
-    position: absolute;
-    transform: translate(-50%,-50%);
-    top: 162vh;
-    left: 50vw;
-    font-weight: 100;
-    color:#737373;
-    font-size: clamp(0.9rem, 3.8vw, 2.8rem);
-}
-div.btn a:hover{
-    transform: scale(1.1) ;
 
 
-    transition: transform 0.3s ease;
+.footer-section ul {
+  
+  width: 80vw;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  
 }
-div.btn a{
-        transition: transform 0.7s ease;
 
+.footer-section li {
+  margin: 0.3rem 0;
+  font-size: 1.2rem;
 }
-div.add a:hover{
-    transform: scale(1.1) ;
 
 
-    transition: transform 0.3s ease;
+.actu .news-item {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.2rem;
+  margin-bottom: 1rem;
+  padding-left: 24vw;
 }
-div.add a{
-    transition: transform 0.7s ease;
+
+.actu img {
+  width: 26vw;
+  
+  object-fit: cover;
+  border-radius: 6px;
 }
-.rectangle {
-    position: absolute;
-  top: 420vh;
-  left: 3vw;
-  width: 20vw;   /* largeur */
-  height: 6px;   /* hauteur */
-  background-color: #933C24;  /* couleur du rectangle */
-  border-radius: 5px;         /* coins légèrement arrondis (optionnel) */
+
+.actu .date {
+  color: #E9BD8C;
+  font-size: 1.6rem;
+  margin-left: 6vw;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+
+  
 }
+
+.actu .titre {
+  color: #fff;
+  margin-top: -35px;
+  padding-left: 7vw;
+  font-size: 2.1rem;
+  font-weight: 500;
+}
+
+
+.copy {
+  font-size: 1.5rem;
+  color: #737373;
+  font-weight: 600;
+  margin-top: 2.8rem;
+}
+

@@ -8,182 +8,210 @@
     <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="band"></div>
-        <img src="logo.png" alt="Keithston Coffee Shop" title="Keithston Coffee Shop" loading="lazy">
-    </header>
 
-    <div class="container">
-        
-        <img src="img1.png" alt="Keithston Coffee Shop" title="Keithston Coffee Shop" loading="lazy">
-        <p>Café Délicieux</p>
-        <h1>Douseurs & <br>Saveurs</h1>
-        <div class="btn">
-            <a href="menu.html">Commander</a>
-        </div>
-    </div>
-    <h2 class="top">Nos Tops Produits</h2>
-    <section class = 'top'>
-        <div class = 'flex'>
-            <div class = 'pain'>
-                <img class = janbon src="painaujanbon.png" alt="painaujanbon" title="painaujanbon" loading="lazy">
-                <div class="add">
-                    <a href="menu.html">Ajouter</a>
-                </div>
-                <p class = 'nom'>Pâtisserie <br/>au jambon</p>
-                <p class = 'prix'>40€ </p>
-                <img class = info src="info.png" alt="le logo d'info">
-            </div>
-        </div>
-        <div class = 'flex'>
-            <div class = 'pain'>
-                <img class = feuille src="feuillter.png" alt="painaujanbon" title="painaujanbon" loading="lazy">
-                <div class="add">
-                    <a href="menu.html">Ajouter</a>
-                </div>
-                <p class = 'nom'>Pâtisserie <br/>feuilletée</p>
-                <p class = 'prix'>40€ </p>
-                <img class = info src="info.png" alt="le logo d'info">
-            </div>
-            
-        </div>
-        <div class = 'flex'>
-            <div class = 'pain'>
-                <img class = bagette src="paincom.png" alt="painaujanbon" title="painaujanbon" loading="lazy">
-                <div class="add">
-                    <a href="menu.html">Ajouter</a>
-                </div>
-                <p class = 'nom'>Baguette de <br/>campagne</p>
-                <p class = 'prix'>40€ </p>
-                <img class = info src="info.png" alt="le logo d'info">
-            </div>
-            
-        </div>
-        <div class = 'flex'>
-            <div class = 'pain'>
-                <img class = miche src="painblanc.png" alt="painaujanbon" title="painaujanbon" loading="lazy">
-                <div class="add">
-                    <a href="menu.html">Ajouter</a>
-                </div>
-                <p class = 'nom'>Miche de pain <br/>blanc</p>
-                <p class = 'prix'>40€ </p>
-                <img class = info src="info.png" alt="le logo d'info">
-            </div>
-            
-        </div>
-        <div class = 'flex'>
-            <div class = 'pain'>
-                <img class = gfeuille src="painfeulle.png" alt="painaujanbon" title="painaujanbon" loading="lazy">
-                <div class="add">
-                    <a href="menu.html">Ajouter</a>
-                </div>
-                <p class = 'nom'>Gâteau pâte <br/>feuilletée</p>
-                <p class = 'prix'>40€ </p>
-                <img class = info src="info.png" alt="le logo d'info">
-            </div>
-            
-        </div>
-        <div class = 'flex'>
-            <div class = 'pain'>
-                <img class = pmich src="michepain.png" alt="painaujanbon" title="painaujanbon" loading="lazy">
-                <div class="add">
-                    <a href="menu.html">Ajouter</a>
-                </div>
-                <p class = 'nom'>Miche de pain <br/>complet</p>
-                <p class = 'prix'>40€ </p>
-                <img class = info src="info.png" alt="le logo d'info">
-            </div>
-            
+<header>
+    <img src="logo.png" alt="Keithston Coffee Shop" title="Keithston Coffee Shop" loading="lazy">
+     <div class="menu">
+
+    <input type="checkbox" id="hamburger">
+
+    <label id="hamburger-logo" for="hamburger"></label>
+
+    <nav>
+      <a href="#">Accueil</a>
+      <a href="#">Blog</a>
+      <a href="#">Contact</a>
+      <a href="#">Services</a>
+    </nav>
+  </div>
+</header>
+
+
+    <section class="hero">
+        <img src="img1.png" alt="Keithston Coffee Shop" loading="lazy">
+        <div class="hero-text">
+            <p>Café Délicieux</p>
+            <h1>Douseurs & <br>Saveurs</h1>
+            <a href="menu.html" class="bob">Commander</a>
+
         </div>
     </section>
+
+    <section class="top">
+        <h2>Nos Tops Produits</h2>
+        <div class="produits">
+            <div class="pain">
+                <img class="jambon" src="painaujanbon.png" alt="pâtisserie au jambon">
+                <p class="nom">Pâtisserie<br>au jambon</p>
+                <p class="prix">40€</p>
+                <a href="menu.html" class="add">Ajouter</a>
+                <img class = "infor" src="info.png" alt="info">
+     
+            </div>
+
+            <div class="pain">
+                <img class = "feuille" src="feuillter.png" alt="pâtisserie feuilletée">
+                <p class="nom">Pâtisserie<br>feuilletée</p>
+                <p class="prix">40€</p>
+                <a href="menu.html" class="add">Ajouter</a>
+                <img class = "infor" src="info.png" alt="info">
+            </div>
+
+            <div class="pain">
+                <img class="bag" src="paincom.png" alt="baguette de campagne">
+                <p class="nom">Baguette de<br>campagne</p>
+                <p class="prix">40€</p>
+                <a href="menu.html" class="add">Ajouter</a>
+                <img class = "infor" src="info.png" alt="info">
+     
+            </div>
+
+            <div class="pain">
+                <img class ="mich" src="painblanc.png" alt="miche de pain blanc">
+                <p class="nom">Miche de pain<br>blanc</p>
+                <p class="prix">40€</p>
+                <a href="menu.html" class="add">Ajouter</a>
+                <img class = "infor" src="info.png" alt="info">
+            </div>
+            <div class="pain">
+                <img src="painfeulle.png" alt="miche de pain blanc">
+                <p class="nom">Gâteau pâte <br/>feuilletée</p>
+                <p class="prix">40€</p>
+                <a href="menu.html" class="add">Ajouter</a>
+                <img class = "infor" src="info.png" alt="info">
+            </div>
+            <div class="pain">
+                <img src="michepain.png" alt="miche de pain blanc">
+                <p class="nom">Miche de pain <br/>complet</p>
+                <p class="prix">40€</p>
+                <a href="menu.html" class="add">Ajouter</a>
+                <img class = "infor" src="info.png" alt="info">
+            </div>
+        </div>
+    </section>
+
     <section class="promo">
-        <h2>20% de Réduction sur la première <br/>commande </h2>
+        <h2>20% de Réduction sur la première commande</h2>
         <p>Profitez de cette offre pour découvrir <br/>nos plus beaux délices ! </p>
-        <div class="btn">
-            <a href="menu.html">En savoir plus</a>
-           
-        </div>
-             
+        <a href="menu.html" class="btn">En savoir plus</a>
     </section>
-    <h2 class="dec">Découvrir</h2>
+
+
+
     <section class="decouvert">
-        <a href="page3.html"><p class="gateau">Gâteau</p></a>
-        <a href="page3.html"><p class="muffin">Muffin</p></a>
-        <a href="page3.html"><p class="croissant">Croissent</p></a>
-        <a href="page3.html"><p class="pains">Pains</p></a>
+        <h2>Découvrir</h2>
+        <div class="choix">
+            <a href="page3.html">Gâteau</a>
+            <a href="page3.html">Muffin</a>
+            <a href="page3.html">Croissant</a>
+            <a href="page3.html">Pains</a>
+        </div>
+        <hr>
     </section>
-    
-    <section class = 'decou'>
-        <div class = 'flexm'>
-        </div>
-        <div class = 'flexc'>
-        </div>
-        <div class = 'flexcr'>
-        </div>
-        <div class = 'flexbu'>
-        </div>
-        <div class = 'flexch'>
-        </div>
-        <div class = 'flexch2'>
+
+     <section class="decou">
+        <div class="grid-decou">
+            <div class="flexm" aria-hidden="true"></div>
+            <div class="flexc" aria-hidden="true"></div>
+            <div class="flexcr" aria-hidden="true"></div>
+            <div class="flexbu" aria-hidden="true"></div>
+            <div class="flexch" aria-hidden="true"></div>
+            <div class="flexch2" aria-hidden="true"></div>
         </div>
     </section>
     <section class="propos">
-        <h2>A propos</h2>
-        <p>Un café moderne qui respecte les <br/>recettes traditionnelles en vous <br/>proposant du “fait maison”. </p>
-        <div class="btn">
-            <a href="menu.html">Lire plus</a>
-           
-        </div>
-             
+        <h2>À propos</h2>
+        <p>Un café moderne qui respecte les recettes traditionnelles en vous proposant du “fait maison”.</p>
+        <a href="menu.html" class="btn">Lire plus</a>
     </section>
-    <h2 class="plaisire">Petits Plaisirs</h2>
-    <section class = 'plais'>
-        <div class = 'patefeuille'>
-        </div>
-        <div class = 'donuts'>
-        </div>
-        <div class = 'brownies'>
-        </div>
 
-        
-    </section>
-    <p class="pf">Pâte feuilletée</p>
-    <p class="pfe">8€</p>
-    <p class="do">Donuts</p>
-    <p class="doe">8€</p>
-    <p class="br">Brownies</p>
-    <p class="bre">8€</p>
-    <section class="foot">
-        <img class="logo" src="logo.png" alt="Keithston Coffee Shop" title="Keithston Coffee Shop" loading="lazy">
-        <h2 class="suiv">Suiver Nous</h2>
-        <h2 class="prop">A propos</h2>
-        <img class="reso" src="reso.png" alt="Keithston Coffee Shop" title="Keithston Coffee Shop" loading="lazy">
-        <p class="num">02 38  00 00 00</p>
-        <p class="email">bakery@coda.school</p>
-        <p class="adrs">24 Rue Jeanne d’Arc</p> 
-        <p class="pos">45000 Orléans</p> 
-        <h2 class="exp">Explorer</h2>
-        <p class = "acc">Accueil</p>
-        <p class = "blo">Blog</p>
-        <p class = "con">Contact</p>
-        <p class = "ser">Service</p>
-        <h2 class="act">Actualité</h2>
-        <img class="newdes" src="newdes.png" alt="Keithston Coffee Shop" title="Keithston Coffee Shop" loading="lazy">
-        <img class="painrai" src="painrai.png" alt="Keithston Coffee Shop" title="Keithston Coffee Shop" loading="lazy">
-        <p class = "new">Nouveau délice</p>
-        <p class = "pai">Pain au raisin</p>
-        <p class = "dat1">14 juin 2024</p>
-        <p class = "dat2">14 juin 2024</p>
-        <p class = "cre">© 2025 Coda Bakery.<br/>Tous droits réservés</p>
-        <div class="lo"><hr></div>
-    </section>
-    <div class="deco">
-        <hr>
+    <section class="plaisirs">
+  <h2>Petits Plaisirs</h2>
+  <div class="galerie">
+    <div class="item1">
+
+      
     </div>
-    <div class="rectangle"></div>
+    <div class="info">
+        <p class="nom">Pâte feuilletée</p>
+        <p class="prix">8€</p>
+      </div>
+    <div class="item2">
+      
+    </div>
+    <div class="info">
+        <p class="nom">Donuts</p>
+        <p class="prix">8€</p>
+      </div>
+
+    <div class="item3">
+     
+    </div>
+    <div class="info">
+        <p class="nom">Brownies</p>
+        <p class="prix">8€</p>
+       </div>
+  </div>
+</section>
 
 
+
+<footer class="foot">
+  <div class="foot-logo">
+    <img src="logo.png" alt="Keithston Logo">
     
+  </div>
+
+  <div class="social">
+    <p>Suivez-nous</p>
+    <div class="icons">
+      <a href="#"><img src="facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="pinterest.png" alt="Pinterest"></a>
+      <a href="#"><img src="whatsapp.png" alt="WhatsApp"></a>
+      <a href="#"><img src="insta.png" alt="Instagram"></a>
+    </div>
+  </div>
+  <hr class ="logo">
+  <div class="footer-section">
+    <h3>A propos</h3>
+    <p>02 38 00 00 00<br>
+    bakery@coda.school<br>
+    24 Rue Jeanne d’Arc<br>
+    45000 Orléans</p>
+  </div>
+
+  <div class="footer-section">
+    <h3>Explorer</h3>
+    <ul>
+      <li><a href="#">Accueil</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Services</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-section actu">
+    <h3>Actualité</h3>
+    <div class="news-item">
+      <img src="newdes.png" alt="Nouveau délice">
+      <div>
+        <p class="date">14 juin 2024</p>
+        <p class="titre">Nouveau délice</p>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <img src="painrai.png" alt="Pain au raisin">
+      <div>
+        <p class="date">14 juin 2024</p>
+        <p class="titre">Pain au raisin</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="copy">© 2025 Coda Bakery. <br/>Tous droits réservés</p>
+</footer>
+
 
 </body>
 </html>
