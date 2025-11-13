@@ -587,14 +587,14 @@ hr.logo {
   
   width: 100vw;
   list-style: none;
-  padding-left: 0;  /* Retire le padding de la liste */
+  padding-left: 0;
   margin-left: 0;
   text-align: left;
   
 }
 
 .footer-section li {
-   padding-left: 0;  /* Retire le padding de la liste */
+   padding-left: 0;
   margin-left: 0;
   font-size: 1.2rem;
   font-family: 'Poppins';
@@ -657,8 +657,16 @@ hr.logo {
   .footer-section {
     max-width: 30%;
     text-align: left;
+    margin-left: 4vw;
+    margin-right: 4vw;
   }
-
+  .actu{
+    margin-left: -10vw;
+  }
+  .explor {
+    max-width: 20vw;
+    margin-left: -2vw;
+  }
   .foot-logo img {
     margin-top: -0.8rem;
     margin-left: -80vw;
@@ -670,19 +678,26 @@ hr.logo {
     overflow: hidden;
   }
 
-  /* Images actu */
+ 
   .actu img {
-    width: 8vw;
+    width: 10vw;
     height: auto;
   }
+   .actu p.date {
+    font-size: 1.4vw;
+  }
 
-  /* Positionnement footer */
+  .actu p.titre {
+    font-size: 1.8vw;
+  }
+
+  
   footer.foot {
     position: relative;
     padding-top: 3rem;
   }
 
-  /* Suivez-nous */
+  
   .social {
     position: absolute;
     top: 5rem;
@@ -710,28 +725,32 @@ hr.logo {
     height: 3.5rem;
   }
 
-  /* Ligne */
+
   hr.logo {
     margin-top: -4rem;
     margin-bottom: 3rem;
   }
 
-  /* Titres sections */
+
   .footer-section h3 {
     margin-top: 0;
     font-size: 3vw;
     text-align: left;
-  }
+  
+    display: flex;
+  
+  text-align: left;
+}
 }
 
-/* Titres en mobile et tablette */
+
 .footer-section h3 {
   margin-top: 0;
   text-align: center !important;
 }
 
 
-/* 720px — Header & Nav */
+
 @media (min-width: 720px) {
 
   section.hero img.logo {
@@ -782,14 +801,14 @@ hr.logo {
   }
 }
 
-/* 1100px — grid découverte */
+
 @media (min-width: 1100px) {
   section.decou div.grid-decou {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* Mobile 720px max */
+
 @media (max-width: 720px) {
 
   section.top div.produits {
@@ -801,7 +820,7 @@ hr.logo {
   }
 }
 
-/* Footer version mobile */
+
 @media (max-width: 920px) {
 
   .footer-section {
@@ -826,7 +845,7 @@ hr.logo {
   }
 }
 
-/* Copie */
+
 .copy {
   font-size: 1.5rem;
   text-align: center;
