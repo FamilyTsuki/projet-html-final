@@ -109,7 +109,8 @@ section.hero {
 
 section.hero img.fond {
   width: 100%;
-  rotate:y -180deg;
+  transform: rotateY(180deg);
+
   height: auto;
   display: block;
 }
@@ -180,20 +181,10 @@ section.top h2 {
 
 section.top div.produits {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-
-
-section.top div.produits {
-  display: grid;
   gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(23vw, 1fr));
   justify-content: center;
 }
-
 section.top div.produits div.pain {
   background-image: url(fond.png);
   background-size: cover;
@@ -449,23 +440,8 @@ section.plaisirs div.galerie {
   align-items: stretch;
 }
 
-section.plaisirs div.galerie div.item1,
-section.plaisirs div.galerie div.item2,
-section.plaisirs div.galerie div.item3 {
-  background-size: cover;
-  background-position: center;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  overflow: hidden;
-  width: 100%; 
-  aspect-ratio: 1 / 1;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
-
-section.plaisirs div.galerie div.item1,
-section.plaisirs div.galerie div.item2,
-section.plaisirs div.galerie div.item3 {
+section.plaisirs div.galerie div.item1,section.plaisirs div.galerie div.item2,section.plaisirs div.galerie div.item3 {
   position: relative;
   background-size: cover;
   background-position: center;
@@ -480,36 +456,17 @@ section.plaisirs div.galerie div.item3 {
 
 section.plaisirs div.galerie div.item1 {
   background-image: url(patefeuille.png);
-  background-repeat: no-repeat;
-    background-size: cover;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-
   background-position-x: 100%;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
 }
 section.plaisirs div.galerie div.item2 {
   background-image: url(donuts.png);
-  background-repeat: no-repeat;
-    background-size: cover;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
- background-position-x: 0;
-  
+  background-position-x: 0;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 section.plaisirs div.galerie div.item3 {
   background-image: url(browni.png);
-  background-repeat: no-repeat;
-    background-size: cover;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-
   background-position-x: 85%;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 
@@ -532,12 +489,12 @@ section.plaisirs .info {
 footer.foot {
   background: url('fond4.png') center/cover no-repeat;
   color: #E9BD8C;
-  text-align: center;
+
   padding: 0rem 1rem;
   font-family: 'Poppins', sans-serif;
   display: flex;
   flex-direction: column;
-  align-items: center;
+
 }
 
 .foot-logo {
@@ -594,11 +551,13 @@ hr.logo {
 }
 .footer-section {
   width: 26vw;
-  text-align: center;
+  
   
 }
 
 .footer-section h3 {
+  
+  text-align: center;
   color: #E9BD8C;
   font-size: 3rem;
   font-weight: 700;
@@ -609,6 +568,7 @@ hr.logo {
 
 
 .footer-section a {
+  display: block;
   font-family: 'Poppins';
   color: white;
   text-decoration: none;
@@ -625,69 +585,69 @@ hr.logo {
 
 .footer-section ul {
   
-  width: 80vw;
+  width: 100vw;
   list-style: none;
-  padding: 0;
-  margin: 0;
+  padding-left: 0;  /* Retire le padding de la liste */
+  margin-left: 0;
   text-align: left;
   
 }
 
 .footer-section li {
-  margin: 0.3rem 0;
+   padding-left: 0;  /* Retire le padding de la liste */
+  margin-left: 0;
   font-size: 1.2rem;
   font-family: 'Poppins';
 }
 
-
 .actu .news-item {
-  margin-top: 2rem;
   display: flex;
   align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  transform: none;
   justify-content: flex-start;
+  padding-left: 0;
   
-  margin-bottom: 1rem;
-  transform: translateX(-50%);
 }
 
-
 .actu img {
-  width: 26vw;
-  
+  width: 20vw;
+  height: auto;
   object-fit: cover;
-  border-radius: 6px;
+  flex-shrink: 0;
 }
 
 .actu .date {
-  font-family: 'Poppins';
   color: #E9BD8C;
-  font-size: 1.6rem;
-  margin-left: 6vw;
-  margin-top: -1rem;
-  margin-bottom: 1rem;
-
-  
+  font-size: 0.9rem;
+  margin: 0 0 0.3rem 0;
 }
 
 .actu .titre {
-  font-family: 'Poppins';
   color: #fff;
-  margin-top: -35px;
-  padding-left: 7vw;
-  font-size: 2.1rem;
+  font-size: 1.1rem;
   font-weight: 500;
+  margin: 0;
+  padding: 0;
+  white-space: normal;
 }
 
+.actu .news-item > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 .footer-sections-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  
   gap: 2rem;
   width: 100%;
 }
-
 @media (min-width: 920px) {
+
   .footer-sections-container {
     flex-direction: row; 
     justify-content: space-between;
@@ -698,105 +658,92 @@ hr.logo {
     max-width: 30%;
     text-align: left;
   }
-  .actu .news-item {
-    margin-top: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-    
-    padding-left: 0;
-  }
 
-
-  .actu img {
-    width: 10vw;
-    
-    object-fit: cover;
-    border-radius: 6px;
-  }
-
-  .actu .date {
-    color: #E9BD8C;
-    font-size: 1.8vw;
-    margin-left: 2.5vw;
-    margin-top: -1rem;
-    margin-bottom: 1rem;
-
-    
-  }
-
-  .actu .titre {
-    color: #fff;
-    margin-top: -35px;
-    padding-left: 3vw;
-    font-size: 2.5vw;
-    font-weight: 500;
-  }
   .foot-logo img {
-    
+    margin-top: -0.8rem;
     margin-left: -80vw;
     width: 29vw;
     height: 15.5vw;
     object-fit: cover;
     object-position: top;
-    
     margin-bottom: 5rem;
     overflow: hidden;
   }
-}
-@media (min-width: 920px) {
-  .social {
+
+  /* Images actu */
+  .actu img {
+    width: 8vw;
+    height: auto;
+  }
+
+  /* Positionnement footer */
+  footer.foot {
     position: relative;
-    top:-18vh;
-    left: 30vw;
-    margin-bottom: -5rem;
+    padding-top: 3rem;
+  }
+
+  /* Suivez-nous */
+  .social {
+    position: absolute;
+    top: 5rem;
+    right: 10rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
   }
 
   .social p {
-    position: relative;
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-
-    top:8.5vh;
-    left: -23vw;
-
+    font-size: 1.6rem;
+    margin: 0;
   }
 
   .icons {
+    display: flex;
     justify-content: flex-end;
-    gap: 0.8rem;
+    gap: 1rem;
+    margin: 0;
   }
 
   .icons img {
-    width: 6vw;
+    width: 3.5rem;
+    height: 3.5rem;
   }
+
+  /* Ligne */
+  hr.logo {
+    margin-top: -4rem;
+    margin-bottom: 3rem;
+  }
+
+  /* Titres sections */
   .footer-section h3 {
-  
-    font-size: 7wv;
-  
+    margin-top: 0;
+    font-size: 3vw;
+    text-align: left;
   }
 }
 
+/* Titres en mobile et tablette */
+.footer-section h3 {
+  margin-top: 0;
+  text-align: center !important;
+}
+
+
+/* 720px — Header & Nav */
 @media (min-width: 720px) {
+
   section.hero img.logo {
     display: block;
   }
+
   nav.pc {
     display: flex;
-  }
-}
-
-@media (min-width: 720px) {
-  nav.pc {
-    display: none;
     position: absolute;
     top: 4vw;
     left: 20vw;
     height: 60px;
-    
-    display: flex;
     align-items: center;
     justify-content: space-around;
     z-index: 999;
@@ -813,58 +760,79 @@ hr.logo {
     font-size: 2vw;
     transition: all 0.3s ease;
   }
-}
-@media (min-width: 720px) {
+
   header {
     display: none;
   }
-}
-@media (max-width: 720px) {
-  section.top div.produits {
-    grid-template-columns: 1fr;
-  }
-}
-@media (min-width: 720px) {
+
   section.top div.produits div.pain a.add {
     padding: 0.7rem 1rem;
     font-size: 1.5vw;
-  
-}
-}
-@media (min-width: 720px) {
+  }
+
   section.decou div.grid-decou {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.25rem;
     justify-items: center;
-    
   }
+
   section.decou div.grid-decou > div {
     width: 23vw;
     height: 23vw;
   }
 }
 
-
+/* 1100px — grid découverte */
 @media (min-width: 1100px) {
   section.decou div.grid-decou {
     grid-template-columns: repeat(3, 1fr);
   }
-  section.decou div.grid-decou > div {
-    width: 23vw;
-    height: 23vw;
-  }
 }
+
+/* Mobile 720px max */
 @media (max-width: 720px) {
+
+  section.top div.produits {
+    grid-template-columns: 1fr;
+  }
+
   section.plaisirs div.galerie {
     grid-template-columns: 1fr;
   }
-  
 }
 
+/* Footer version mobile */
+@media (max-width: 920px) {
+
+  .footer-section {
+    width: 100%;
+  }
+
+  .footer-section ul,
+  .footer-section li,
+  .footer-section a,
+  .footer-section p {
+    text-align: left;
+  }
+
+  .footer-section a,
+  .footer-section p,
+  .news-item {
+    margin-left: 10vw;
+  }
+
+  .social p {
+    text-align: center;
+  }
+}
+
+/* Copie */
 .copy {
   font-size: 1.5rem;
+  text-align: center;
   color: #737373;
   font-weight: 600;
   margin-top: 2.8rem;
+  padding-left: 20vw;
+  padding-right: 20vw;
 }
-
