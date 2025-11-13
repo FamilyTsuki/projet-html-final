@@ -7,8 +7,8 @@ body {
 
 header {
   display: flex;
-
   
+   z-index: 10;
   background: white;
 max-height: 80px;
 }
@@ -16,49 +16,34 @@ max-height: 80px;
 
 
 #hamburger {
-  /* Pour que la checkbox ne s'affiche pas */
   display: none;
 }
 
 #hamburger-logo {
-  /* Pour que le curseur soit un pointeur */
   cursor: pointer;
   background: rgb(255, 255, 255);
   width: 10vw;
   display: block;
   color: white;
   font-size: 8vw;
-  /* Pour que le menu hamburger s'affiche toujours */
   text-align: center;
-  /* Pour que le menu hamburger soit "rangé" par défaut */
   transform: translate(64vw,0.5vw);
   padding: 10px;
+   z-index: 20;
+   transition: 0.7s;
 }
 
 nav {
+  position: relative;
+   z-index: 20;
   display: flex;
   flex-direction: column;
   background: rgb(0, 0, 0);
   overflow: hidden;
   width: 200px;
-  /* Pour que les liens soient "rangés" par défaut */
   transform: translateX(100vw);
-}
-
-#hamburger-logo,
-nav {
-  /* Pour qu'il y ait une animation */
   transition: 0.7s;
 }
-
-/* Lorsque #hamburger est coché, le #hamburger-logo et le nav qui sont dans le même parent changent de propriété */
-#hamburger:checked ~ #hamburger-logo,
-#hamburger:checked ~ nav {
-  /* Changement de la position pour afficher les menus */
-  transform: translate(40vw,0.5vw);
-  
-}
-
 nav a {
   color: white;
   text-decoration: none;
@@ -68,13 +53,17 @@ nav a {
 nav a:hover {
   background: #444;
 }
+#hamburger:checked ~ #hamburger-logo,#hamburger:checked ~ nav {
+  transform: translate(40vw,0.5vw);
+}
+
+
 #hamburger-logo::before {
-  content: "☰"; /* hamburger */
-  color: #000000; /* par exemple une couleur dorée */
+  content: "☰";
+  color: #000000;
 
 }
 
-/* on cache le vrai texte du label */
 #hamburger-logo {
   color: transparent;
   position: relative;
@@ -84,7 +73,7 @@ nav a:hover {
 }
 #hamburger:checked + #hamburger-logo::before {
   content: "✖";
-  color: #000000; /* par exemple une couleur dorée */
+  color: #000000;
   
 }
 
@@ -97,7 +86,8 @@ section.hero {
   position: relative;
   text-align: center;
   background-color: #242d93;
-  z-index: -100;
+  z-index: 0;
+  
 }
 
 section.hero img {
@@ -129,7 +119,7 @@ section.hero div.hero-text h1 {
   margin: 0.5rem 0;
 }
 
-section.hero div.hero-text a.btn {
+.bob {
   margin-top: 1rem;
   display: inline-block;
   background-color: #933C24;
@@ -140,9 +130,10 @@ section.hero div.hero-text a.btn {
   text-decoration: none;
   transition: transform 0.3s ease;
 }
-
-section.hero div.hero-text a.btn:hover {
+.bob:hover {
   transform: scale(1.1);
+  transition: transform 0.3s ease;
+  
 }
 
 
@@ -230,12 +221,20 @@ section.top div.produits div.pain a.add {
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
+  transition: transform 0.3s ease;
+}
+section.top div.produits div.pain a.add:hover {
+  transform: scale(1.1);
 }
 section.top div.produits div.pain img.infor {
    position: absolute;
   top: 64%;
   left: 76%;
   height: 10%;
+  transition: transform 0.3s ease;
+}
+section.top div.produits div.pain img.infor:hover {
+  transform: scale(1.05) rotate(4deg);
 }
 
 section.promo {
@@ -471,11 +470,6 @@ section.plaisirs div.galerie div.item3 {
 }
 
 
-section.plaisirs div.galerie div.item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-}
-
 
 section.plaisirs .info {
   display: flex;
@@ -483,7 +477,7 @@ section.plaisirs .info {
   margin-top: -10px;
   font-size: 1.3rem;
   justify-content: space-between; /* garde un grand espace entre les deux */
-
+  transition: transform 0.3s ease;
 }
 
 section.plaisirs .nom {
