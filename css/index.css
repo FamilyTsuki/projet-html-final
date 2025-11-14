@@ -27,35 +27,54 @@ header img {
 }
 
 /* Checkbox du menu burger (caché) */
-#hamburger {
+.meun {
   display: none;
+  
 }
 
 /* Icône burger */
 #hamburger-logo {
+  position: fixed;
   cursor: pointer;
   width: 10vw;
   display: block;
-  color: white;
+  background-color: rgba(255, 255, 255, 0.5) ;
   font-size: 8vw;
   text-align: center;
   transform: translate(64vw, 0.5vw);
-  padding: 10px;
+  padding: 9px;
   z-index: 20;
-  transition: 0.7s;
+  transition: 0.4s;
+  margin-top: -1.5rem;
+  z-index: 200;
 }
 
 /* Menu burger (navigation mobile) */
 nav.bg {
-  position: relative;
-  z-index: 20;
+  position: fixed;
+  top: 0;
+  right: -40vw; /* Caché en dehors de l'écran */
+  width: 40vw;
+  height: 100vh;
+  background: black;
   display: flex;
   flex-direction: column;
-  background: rgb(0, 0, 0);
-  overflow: hidden;
-  width: 200px;
-  transform: translateX(100vw); /* Caché par défaut */
-  transition: 0.7s;
+  padding-top: 80px;
+  transition: right 0.4s ease;
+  z-index: 100;
+}
+
+
+#hamburger:checked ~ nav.bg {
+  right: 0; /* Le menu glisse vers l'intérieur */
+  
+  visibility: visible;
+
+}
+#hamburger:checked ~ #hamburger-logo {
+  transform: translateX(40vw);  
+  visibility: visible;
+
 }
 
 nav.bg a {
@@ -70,10 +89,7 @@ nav.bg a:hover {
 }
 
 /* Animation ouverture du menu burger */
-#hamburger:checked ~ #hamburger-logo,
-#hamburger:checked ~ nav {
-  transform: translate(40vw, 0.5vw);
-}
+
 
 /* Icône hamburger par défaut */
 #hamburger-logo::before {
@@ -83,7 +99,7 @@ nav.bg a:hover {
 
 #hamburger-logo {
   color: transparent;
-  position: relative;
+  
 }
 
 /* Fond gris quand le menu est ouvert */
@@ -123,16 +139,18 @@ nav.pc a:hover {
 section.hero {
   position: relative;
   text-align: center;
-  background-color: #242d93;
+  
   z-index: 0;
 }
 
 /* Image de fond */
 section.hero img.fond {
-  width: 100%;
+  width: 100vw;
   transform: rotateY(180deg); /* Effet miroir */
   height: auto;
   display: block;
+  object-fit: cover; /* Empêche l'image d'étirer la page */
+
 }
 
 /* Logo (visible uniquement sur desktop) */
@@ -192,7 +210,8 @@ section.hero div.hero-text h1 {
 
 section.top {
   text-align: left;
-  padding: 0.2rem 1rem;
+  padding: 0.2rem 0;
+  width: 100%;
 }
 
 section.top h2 {
@@ -206,11 +225,14 @@ section.top h2 {
 
 /* Grille de produits */
 section.top div.produits {
+  padding: 0 3vw;
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(23vw, 1fr));
-  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  max-width: 1100px; /* 3 x 300px max = 3 colonnes max */
+  margin: 0 auto;
 }
+
 
 /* Carte produit individuelle */
 section.top div.produits div.pain {
@@ -287,9 +309,6 @@ section.top div.produits div.pain a.add {
   font-weight: bold;
   transition: transform 0.3s ease;
   transform: translatex(-50%);
-}
-
-section.top div.produits div.pain a.add {
   transition: transform 0.3s ease;
 }
 
@@ -321,9 +340,13 @@ section.promo {
   background-position: center;
   text-align: center;
   padding: 2rem 1.5rem;
+  
+  padding: 1rem 20vw;
+  
 }
-
-
+section.promo h2{
+  font-family: 'Sansita Swashed', cursive;
+}
 section.promo a {
   display: inline-block;
   background-color: #933C24;
@@ -365,7 +388,7 @@ section.decouvert div.choix {
   
 }
 div.choisi {
-  width: 4vw;
+  
   height: 8px;
   background-color: #933C24;
   border-radius: 5px;
@@ -912,7 +935,7 @@ hr.logo {
 }
 
 /* ========================================
-   MEDIA QUERIES - TABLETTE (720px+)
+   MEDIA QUERIES - TABLETTE (768px+)
    ======================================== */
 
 @media (min-width: 768px) {
@@ -979,7 +1002,7 @@ hr.logo {
 
   section.propos {
     padding: 0.2rem 0em;
-    font-style: 3vw;
+    
   }
 
   section.propos a {
@@ -1020,10 +1043,10 @@ hr.logo {
 }
 
 /* ========================================
-   MEDIA QUERIES - MOBILE (MAX 720px)
+   MEDIA QUERIES - MOBILE (MAX 768px)
    ======================================== */
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   /* Produits en une seule colonne */
   section.top div.produits {
     grid-template-columns: 1fr;
@@ -1047,10 +1070,10 @@ hr.logo {
 }
 
 /* ========================================
-   MEDIA QUERIES - MOBILE FOOTER (MAX 920px)
+   MEDIA QUERIES - MOBILE FOOTER (MAX 1024px)
    ======================================== */
 
-@media (max-width: 920px) {
+@media (max-width: 1024px) {
   .footer-section {
     width: 100%;
   }
@@ -1072,5 +1095,180 @@ hr.logo {
   /* Suivez-nous centré sur mobile */
   .social p {
     text-align: center;
+  }
+}
+/* ========================================
+   MEDIA QUERY - TRÈS PETIT MOBILE (320px-480px)
+   ======================================== */
+
+@media (max-width: 480px) {
+  
+  /* === SECTION HERO === */
+  section.hero div.hero-text h1 {
+    font-size: 8vw; /* Plus lisible sur petit écran */
+  }
+
+  section.hero div.hero-text p {
+    font-size: 4vw;
+  }
+
+  .btncom {
+    font-size: 3.5vw;
+    padding: 0.5rem 1rem;
+  }
+
+  /* === SECTION TOP PRODUITS === */
+  section.top h2 {
+    font-size: 6vw; /* Réduit de 7vw à 6vw */
+    padding: 4vw;
+  }
+
+  section.top div.produits div.pain p.nom {
+    font-size: clamp(14px, 4vw, 40px); /* Taille min 14px */
+  }
+
+  section.top div.produits div.pain p.prix {
+    font-size: clamp(14px, 4vw, 30px);
+  }
+
+
+  /* === SECTION PROMO === */
+  section.promo h2 {
+    font-size: 5vw;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  section.promo p {
+    font-size: 4vw;
+    margin-bottom: 3rem;
+  }
+
+  section.promo a {
+    font-size: 4vw;
+    padding: 1.2rem 1.5rem;
+  }
+
+  /* === SECTION DÉCOUVRIR === */
+  section.decouvert h2 {
+    font-size: 6vw;
+  }
+
+  section.decouvert div.choix a {
+    font-size: 4vw;
+    padding: 0.3rem 0.8rem;
+  }
+
+  /* === SECTION À PROPOS === */
+  section.propos h2 {
+    font-size: 7vw;
+  }
+
+  section.propos p {
+    font-size: 4.5vw;
+    margin: 3rem 0;
+  }
+
+  section.propos a {
+    font-size: 4vw;
+    padding: 1.2rem 2rem;
+  }
+
+  /* === SECTION PETITS PLAISIRS === */
+  section.plaisirs h2 {
+    font-size: 6vw;
+    margin-bottom: 2rem;
+  }
+
+  section.plaisirs .info {
+    font-size: clamp(14px, 4vw, 30px);
+  }
+
+  /* === FOOTER === */
+  
+  /* Logo footer réduit */
+  .foot-logo img {
+    width: 60vw; /* Réduit de 69vw à 60vw */
+    height: 40vw; /* Réduit de 45.5vw à 40vw */
+    margin-bottom: 3rem;
+  }
+
+  .foot-logo {
+    margin-top: -2rem;
+  }
+
+  /* Réseaux sociaux plus petits */
+  .social {
+    margin-top: -4rem;
+  }
+
+  .social p {
+    font-size: 5vw; /* Réduit de 2.1rem à 5vw = 16px à 320px */
+  }
+
+  .icons {
+    gap: 0.8rem;
+  }
+
+  .icons i {
+    font-size: 12vw; /* Réduit de 15vw à 12vw = 38px à 320px */
+  }
+
+  .icons img {
+    width: 12vw; /* Réduit de 15vw à 12vw */
+  }
+
+  /* Sections footer */
+  .footer-section h3 {
+    font-size: 6vw; /* Réduit de 3rem à 6vw = 19px à 320px */
+    margin-bottom: 0.8rem;
+  }
+
+  .footer-section a {
+    font-size: 4vw; /* Réduit de 2rem à 4vw = 13px à 320px */
+    line-height: 1.4;
+  }
+
+  .footer-section {
+    width: 100%;
+  }
+
+  /* Actualités plus compactes */
+  .actu img {
+    width: 18vw; /* Réduit de 20vw à 18vw */
+  }
+
+  .actu .date {
+    font-size: 3vw;
+  }
+
+  .actu .titre {
+    font-size: 3.5vw;
+  }
+
+  .actu .news-item {
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Copyright plus compact */
+  .copy {
+    font-size: 3.5vw; /* Réduit de 1.5rem */
+    padding-left: 5vw; /* Réduit de 20vw à 5vw */
+    padding-right: 5vw;
+    margin-top: 2rem;
+  }
+
+  /* Alignement footer */
+  .footer-section a,
+  .footer-section p,
+  .news-item {
+    margin-left: 5vw; /* Réduit de 10vw à 5vw */
+  }
+
+  /* Ligne de séparation */
+  hr.logo {
+    width: 90vw;
+    margin-bottom: 1.5rem;
   }
 }
