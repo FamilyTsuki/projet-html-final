@@ -213,7 +213,7 @@ section.top div.produits {
 
 /* Carte produit individuelle */
 section.top div.produits div.pain {
-  background-image: url(fond.png);
+  background-image: url(./image/fond.png);
   background-size: cover;
   height: auto;
   border-radius: 8px;
@@ -311,7 +311,7 @@ section.top div.produits div.pain img.infor:hover {
 
 section.promo {
   margin-top: 2.5rem;
-  background-image: url(fondpromo.png);
+  background-image: url(./image/fondpromo.png);
   background-size: cover;
   background-position: center;
   text-align: center;
@@ -422,23 +422,23 @@ section.decou div.grid-decou > div {
 
 /* Images de fond pour chaque carte */
 section.decou div.grid-decou div.flexm {
-  background-image: url(mmuffin.png);
+  background-image: url(./image/mmuffin.png);
 }
 
 section.decou div.grid-decou div.flexc {
-  background-image: url(chess.png);
+  background-image: url(./image/chess.png);
 }
 
 section.decou div.grid-decou div.flexcr {
-  background-image: url(crumbl.png);
+  background-image: url(./image/crumbl.png);
 }
 
 section.decou div.grid-decou div.flexbu {
-  background-image: url(butter.png);
+  background-image: url(./image/butter.png);
 }
 
 section.decou div.grid-decou div.flexch {
-  background-image: url(choco.png);
+  background-image: url(./image/choco.png);
 }
 
 section.decou div.grid-decou div.flexch2 {
@@ -451,7 +451,7 @@ section.decou div.grid-decou div.flexch2 {
 
 section.propos {
   margin-top: 1rem;
-  background-image: url(fond3.png);
+  background-image: url(./image/fond3.png);
   background-size: cover;
   background-position: center;
   color: white;
@@ -535,18 +535,18 @@ section.plaisirs div.galerie div.item3 {
 }
 
 section.plaisirs div.galerie div.item1 {
-  background-image: url(patefeuille.png);
+  background-image: url(./image/patefeuille.png);
   background-position-x: 100%;
 }
 
 section.plaisirs div.galerie div.item2 {
-  background-image: url(donuts.png);
+  background-image: url(./image/donuts.png);
   background-position-x: 0;
   overflow: hidden;
 }
 
 section.plaisirs div.galerie div.item3 {
-  background-image: url(browni.png);
+  background-image: url(./image/browni.png);
   background-position-x: 85%;
 }
 
@@ -568,7 +568,7 @@ section.plaisirs .info {
    ======================================== */
 
 footer.foot {
-  background: url('fond4.png') center/cover no-repeat;
+  background: url(fond4.png) center/cover no-repeat;
   color: #E9BD8C;
   padding: 0rem 1rem;
   font-family: 'Poppins', sans-serif;
@@ -611,12 +611,13 @@ footer.foot {
   gap: 1.2rem;
 }
 
-.icons img {
-  width: 15vw;
+.icons i {
+  color:#E9BD8C;
+  font-size: 15vw;
   transition: transform 0.3s ease;
 }
 
-.icons img:hover {
+.icons i:hover {
   transform: scale(1.2);
 }
 
@@ -761,7 +762,7 @@ hr.logo {
   }
 
   .foot-logo img {
-    margin-top: -0.8rem;
+    margin-top: -2rem;
     margin-left: -80vw;
     width: 29vw;
     height: 15.5vw;
@@ -814,9 +815,8 @@ hr.logo {
     margin: 0;
   }
 
-  .icons img {
-    width: 3.5rem;
-    height: 3.5rem;
+  .icons i {
+    font-size: 3.5rem;
   }
 
   /* Ligne de séparation ajustée */
