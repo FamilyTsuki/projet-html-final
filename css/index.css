@@ -191,12 +191,13 @@ section.hero div.hero-text h1 {
    ======================================== */
 
 section.top {
-  text-align: center;
+  text-align: left;
   padding: 0.2rem 1rem;
 }
 
 section.top h2 {
   font-family: 'Sansita Swashed', cursive;
+  text-align: center;
   font-size: 7vw;
   margin-bottom: 2.4rem;
   padding: 3vw;
@@ -235,7 +236,7 @@ section.top div.produits div.pain img {
 /* Ajustements spécifiques par image */
 section.top div.produits div.pain img.jambon {
   height: 90%;
-  margin-top: -4rem;
+  margin-top: -3vw;
 }
 
 section.top div.produits div.pain img.feuille {
@@ -258,7 +259,7 @@ section.top div.produits div.pain p.nom {
   position: absolute;
   top: 80%;
   left: 10%;
-  font-size: 20px;
+  font-size: clamp(10px, 2vw ,40px);
   margin: 0.3rem 0;
 }
 
@@ -288,8 +289,12 @@ section.top div.produits div.pain a.add {
   transform: translatex(-50%);
 }
 
+section.top div.produits div.pain a.add {
+  transition: transform 0.3s ease;
+}
+
 section.top div.produits div.pain a.add:hover {
-  transform: scale(1.1);
+  transform: translateX(-50%) scale(1.1);
 }
 
 /* Icône information */
@@ -318,21 +323,6 @@ section.promo {
   padding: 2rem 1.5rem;
 }
 
-section.promo h2 {
-  color: #933C24;
-  font-family: 'Sansita Swashed', cursive;
-  font-size: 1.9rem;
-  margin-top: 4rem;
-  margin-bottom: 5.6rem;
-  font-weight: 900;
-}
-
-section.promo p {
-  color: #5D5D5D;
-  margin: 1rem 0;
-  font-size: 1.4rem;
-  margin-bottom: 6rem;
-}
 
 section.promo a {
   display: inline-block;
@@ -372,7 +362,15 @@ section.decouvert div.choix {
   justify-content: center;
   flex-wrap: wrap;
   gap: 0.5rem;
+  
 }
+div.choisi {
+  width: 4vw;
+  height: 8px;
+  background-color: #933C24;
+  border-radius: 5px;
+}
+
 
 section.decouvert div.choix a {
   font-family: 'Poppins';
@@ -382,6 +380,7 @@ section.decouvert div.choix a {
   font-weight: 600;
   background: #ffffff;
   padding: 0.4rem 1rem;
+  padding-bottom: 0px;
   border-radius: 5px;
 }
 
@@ -389,11 +388,13 @@ section.decouvert div.choix a:hover {
   background: #ee9671;
 }
 
+
 /* Ligne de séparation */
 hr {
   color: #D9D9D9;
   width: 90vw;
   opacity: 0.5;
+  margin-top: 0;
 }
 
 /* ========================================
@@ -442,7 +443,7 @@ section.decou div.grid-decou div.flexch {
 }
 
 section.decou div.grid-decou div.flexch2 {
-  background-image: url(choco2.png);
+  background-image: url(./../image/choco2.png);
 }
 
 /* ========================================
@@ -558,7 +559,7 @@ section.plaisirs .info {
   display: flex;
   justify-content: space-between;
   font-weight: 600;
-  font-size: clamp(20px, 2vw);
+  font-size: clamp(20px, 2vw , 40px);
   box-sizing: border-box;
   border-radius: 8px;
 }
@@ -617,6 +618,14 @@ footer.foot {
   color:#E9BD8C;
   font-size: 15vw;
   transition: transform 0.3s ease;
+}
+.icons img {
+  width: 15vw;
+  transition: transform 0.3s ease;
+}
+
+.icons img:hover {
+  transform: scale(1.2);
 }
 
 .icons i:hover {
@@ -820,6 +829,9 @@ hr.logo {
   .icons i {
     font-size: 3.5rem;
   }
+  .icons img {
+    width: 3.5rem;
+  }
 
   /* Ligne de séparation ajustée */
   hr.logo {
@@ -958,6 +970,7 @@ hr.logo {
 
   /* Ajustements section À propos */
   section.propos p {
+    font-size: 3vw;
     margin-top: 3rem;
     margin-bottom: 3rem;
     padding-left: 28vw;
@@ -966,12 +979,33 @@ hr.logo {
 
   section.propos {
     padding: 0.2rem 0em;
+    font-style: 3vw;
   }
 
   section.propos a {
     padding: 1vw 2.4vw;
     margin-bottom: 6vw;
   }
+  section.promo h2 {
+    color: #933C24;
+    font-family: 'Sansita Swashed', cursive;
+    font-size: 1.9rem;
+    margin-top: 2rem;
+    margin-bottom: 2.7rem;
+    font-weight: 900;
+    padding-left: 15vw;
+    padding-right: 15vw;
+  }
+
+  section.promo p {
+    color: #5D5D5D;
+    margin: 1rem 0;
+    font-size: 1.4rem;
+    margin-bottom: 3rem;
+    padding-left: 15vw;
+    padding-right: 15vw;
+  }
+
 }
 
 /* ========================================
@@ -999,6 +1033,17 @@ hr.logo {
   section.plaisirs div.galerie {
     grid-template-columns: 1fr;
   }
+  section.top div.produits div.pain p.nom {
+
+  font-size: clamp(30px, 6vw ,120px);
+  margin: 0.3rem 0;
+  }
+  section.top div.produits div.pain p.prix {
+
+  font-size: clamp(30px, 6vw ,120px);
+  margin: 0.3rem 0;
+
+}
 }
 
 /* ========================================
