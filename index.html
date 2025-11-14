@@ -3,44 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>Keithston Coffee Shop</title>
+    <!-- Feuille de style principale -->
     <link href="index.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Polices Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-
 </head>
 <body>
 
+<!-- En-tête mobile avec menu hamburger -->
 <header>
     <img src="logo.png" alt="Keithston Coffee Shop" title="Keithston Coffee Shop" loading="lazy">
-     <div class="menu">
-
-    <input type="checkbox" id="hamburger">
-
-    <label id="hamburger-logo" for="hamburger"></label>
-
-    <nav class="bg">
-      <a href="#">Accueil</a>
-      <a href="#">Blog</a>
-      <a href="#">Contact</a>
-      <a href="#">Services</a>
-    </nav>
-  </div>
+    <div class="menu">
+        <!-- Checkbox invisible pour le menu hamburger -->
+        <input type="checkbox" id="hamburger">
+        <!-- Label qui affiche l'icône hamburger -->
+        <label id="hamburger-logo" for="hamburger"></label>
+        <!-- Navigation mobile -->
+        <nav class="bg">
+            <a href="#">Accueil</a>
+            <a href="#">Blog</a>
+            <a href="#">Contact</a>
+            <a href="#">Services</a>
+        </nav>
+    </div>
 </header>
 
-<nav class = "pc">
-  <a class = "acceuil" href="#">Accueil</a>
-  <a href="#">Blog</a>
-  <a href="#">Contact</a>
-  <a href="#">Services</a>
+<!-- Navigation desktop (cachée sur mobile) -->
+<nav class="pc">
+    <a class="acceuil" href="#">Accueil</a>
+    <a href="#">Blog</a>
+    <a href="#">Contact</a>
+    <a href="#">Services</a>
 </nav>
 
+<!-- Section héro avec image de fond et texte -->
 <section class="hero">
     <img src="img1.png" class="fond" alt="Keithston Coffee Shop" loading="lazy">
     <img src="logo.png" class="logo" alt="Keithston Coffee Shop" title="Keithston Coffee Shop" loading="lazy">
-
+    
     <div class="hero-text">
         <p>Café Délicieux</p>
         <h1>Douseurs & <br>Saveurs</h1>
@@ -48,67 +51,74 @@
     </div>
 </section>
 
+<!-- Section des produits phares -->
 <section class="top">
     <h2>Nos Tops Produits</h2>
     <div class="produits">
+        <!-- Carte produit 1 -->
         <div class="pain">
             <img class="jambon" src="painaujanbon.png" alt="pâtisserie au jambon">
             <p class="nom">Pâtisserie<br>au jambon</p>
             <p class="prix">40€</p>
             <a href="menu.html" class="add">Ajouter</a>
-            <img class = "infor" src="info.png" alt="info">
-  
+            <img class="infor" src="info.png" alt="info">
         </div>
 
+        <!-- Carte produit 2 -->
         <div class="pain">
-            <img class = "feuille" src="feuillter.png" alt="pâtisserie feuilletée">
+            <img class="feuille" src="feuillter.png" alt="pâtisserie feuilletée">
             <p class="nom">Pâtisserie<br>feuilletée</p>
             <p class="prix">40€</p>
             <a href="menu.html" class="add">Ajouter</a>
-            <img class = "infor" src="info.png" alt="info">
+            <img class="infor" src="info.png" alt="info">
         </div>
 
+        <!-- Carte produit 3 -->
         <div class="pain">
             <img class="bag" src="paincom.png" alt="baguette de campagne">
             <p class="nom">Baguette de<br>campagne</p>
             <p class="prix">40€</p>
             <a href="menu.html" class="add">Ajouter</a>
-            <img class = "infor" src="info.png" alt="info">
-  
+            <img class="infor" src="info.png" alt="info">
         </div>
 
+        <!-- Carte produit 4 -->
         <div class="pain">
-            <img class ="mich" src="painblanc.png" alt="miche de pain blanc">
+            <img class="mich" src="painblanc.png" alt="miche de pain blanc">
             <p class="nom">Miche de pain<br>blanc</p>
             <p class="prix">40€</p>
             <a href="menu.html" class="add">Ajouter</a>
-            <img class = "infor" src="info.png" alt="info">
+            <img class="infor" src="info.png" alt="info">
         </div>
+
+        <!-- Carte produit 5 -->
         <div class="pain">
-            <img src="painfeulle.png" alt="miche de pain blanc">
+            <img src="painfeulle.png" alt="gâteau pâte feuilletée">
             <p class="nom">Gâteau pâte <br/>feuilletée</p>
             <p class="prix">40€</p>
             <a href="menu.html" class="add">Ajouter</a>
-            <img class = "infor" src="info.png" alt="info">
+            <img class="infor" src="info.png" alt="info">
         </div>
+
+        <!-- Carte produit 6 -->
         <div class="pain">
-            <img src="michepain.png" alt="miche de pain blanc">
+            <img src="michepain.png" alt="miche de pain complet">
             <p class="nom">Miche de pain <br/>complet</p>
             <p class="prix">40€</p>
             <a href="menu.html" class="add">Ajouter</a>
-            <img class = "infor" src="info.png" alt="info">
+            <img class="infor" src="info.png" alt="info">
         </div>
     </div>
 </section>
 
+<!-- Section promotion avec offre spéciale -->
 <section class="promo">
     <h2>20% de Réduction sur la première commande</h2>
     <p>Profitez de cette offre pour découvrir nos plus beaux délices ! </p>
     <a href="menu.html" class="btn">En savoir plus</a>
 </section>
 
-
-
+<!-- Section découverte avec filtres de catégories -->
 <section class="decouvert">
     <h2>Découvrir</h2>
     <div class="choix">
@@ -120,110 +130,128 @@
     <hr>
 </section>
 
+<!-- Galerie de produits découverte -->
 <section class="decou">
-  <div class="grid-decou">
-    <div class="flexm" aria-hidden="true"></div>
-    <div class="flexc" aria-hidden="true"></div>
-    <div class="flexcr" aria-hidden="true"></div>
-    <div class="flexbu" aria-hidden="true"></div>
-    <div class="flexch" aria-hidden="true"></div>
-    <div class="flexch2" aria-hidden="true"></div>
-  </div>
+    <div class="grid-decou">
+        <!-- Images de fond en arrière-plan via CSS -->
+        <div class="flexm" aria-hidden="true"></div>
+        <div class="flexc" aria-hidden="true"></div>
+        <div class="flexcr" aria-hidden="true"></div>
+        <div class="flexbu" aria-hidden="true"></div>
+        <div class="flexch" aria-hidden="true"></div>
+        <div class="flexch2" aria-hidden="true"></div>
+    </div>
 </section>
 
+<!-- Section à propos -->
 <section class="propos">
-  <h2>À propos</h2>
-  <p>Un café moderne qui respecte les recettes traditionnelles en vous proposant du “fait maison”.</p>
-  <a href="menu.html" class="btn">Lire plus</a>
+    <h2>À propos</h2>
+    <p>Un café moderne qui respecte les recettes traditionnelles en vous proposant du "fait maison".</p>
+    <a href="menu.html" class="btn">Lire plus</a>
 </section>
 
+<!-- Section petits plaisirs avec 3 produits -->
 <section class="plaisirs">
-  <h2>Petits Plaisirs</h2>
-  <div class="galerie">
-    <a href="#" class="cart">
-      <div class="item1"></div>
-      <div class="info">
-          <p class="nom">Pâte feuilletée</p>
-          <p class="prix">8€</p>
-        </div>
-      </a>
-      
-      <a href="#" class="cart">
-        <div class="item2"></div>
-        <div class="info">
-          <p class="nom">Donuts</p>
-          <p class="prix">8€</p>
-        </div>
-      </a>
-      
-    <a href="#" class="cart">
-      <div class="item3"></div>
-      <div class="info">
-        <p class="nom">Brownies</p>
-        <p class="prix">8€</p>
-      </div>
-    </a>
-      
-  </div>
+    <h2>Petits Plaisirs</h2>
+    <div class="galerie">
+        <!-- Produit 1 -->
+        <a href="#" class="cart">
+            <div class="item1"></div>
+            <div class="info">
+                <p class="nom">Pâte feuilletée</p>
+                <p class="prix">8€</p>
+            </div>
+        </a>
+        
+        <!-- Produit 2 -->
+        <a href="#" class="cart">
+            <div class="item2"></div>
+            <div class="info">
+                <p class="nom">Donuts</p>
+                <p class="prix">8€</p>
+            </div>
+        </a>
+        
+        <!-- Produit 3 -->
+        <a href="#" class="cart">
+            <div class="item3"></div>
+            <div class="info">
+                <p class="nom">Brownies</p>
+                <p class="prix">8€</p>
+            </div>
+        </a>
+    </div>
 </section>
 
-
+<!-- Pied de page -->
 <footer class="foot">
-  <div class="foot-logo">
-    <img src="logo.png" alt="Keithston Logo">
-  </div>
-
-  <div class="social">
-    <p>Suivez-nous</p>
-    <div class="icons">
-      <a href="#"><img src="facebook.png" alt="Facebook"></a>
-      <a href="#"><img src="pinterest.png" alt="Pinterest"></a>
-      <a href="#"><img src="whatsapp.png" alt="WhatsApp"></a>
-      <a href="#"><img src="insta.png" alt="Instagram"></a>
-    </div>
-  </div>
-
-  <hr class="logo">
-
-  <div class="footer-sections-container">
-    <div class="footer-section">
-      <h3>A propos</h3>
-      <a href="tel:+33238000000" aria-label="Appeler la boulangerie au 02 38 00 00 00">02 38 00 00 00</a>
-      <a href="mailto:bakery@coda.school" aria-label="Envoyer un e-mail à bakery@coda.school">bakery@coda.school</a>
-      <a href="https://www.google.com/maps/search/?api=1&query=24+Rue+Jeanne+d%27Arc+45000+Orl%C3%A9ans"target="_blank" rel="noopener" aria-label="Ouvrir l'adresse dans Google Maps">24 Rue Jeanne d’Arc</a>
-      <a href="https://www.google.com/maps/search/?api=1&query=45000+Orl%C3%A9ans"target="_blank" rel="noopener" aria-label="Ouvrir l'adresse dans Google Maps">45000 Orléans</a>
-
+    <!-- Logo du footer -->
+    <div class="foot-logo">
+        <img src="logo.png" alt="Keithston Logo">
     </div>
 
-    <div class="footer-section explor">
-      <h3>Explorer</h3>
-      <ul>
-        <li><a href="#">Accueil</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Services</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-section actu">
-      <h3>Actualité</h3>
-      <div class="news-item">
-        <img src="newdes.png" alt="Nouveau délice">
-        <div>
-          <p class="date">14 juin 2024</p>
-          <p class="titre">Nouveau délice</p>
+    <!-- Section réseaux sociaux -->
+    <div class="social">
+        <p>Suivez-nous</p>
+        <div class="icons">
+            <a href="#"><img src="facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="pinterest.png" alt="Pinterest"></a>
+            <a href="#"><img src="whatsapp.png" alt="WhatsApp"></a>
+            <a href="#"><img src="insta.png" alt="Instagram"></a>
         </div>
-      </div>
-
-      <div class="news-item">
-        <img src="painrai.png" alt="Pain au raisin">
-        <div>
-          <p class="date">14 juin 2024</p>
-          <p class="titre">Pain au raisin</p>
-        </div>
-      </div>
     </div>
-  </div>
 
-  <p class="copy">© 2025 Coda Bakery. Tous droits réservés</p>
+    <!-- Ligne de séparation -->
+    <hr class="logo">
+
+    <!-- Container des 3 sections du footer -->
+    <div class="footer-sections-container">
+        <!-- Section 1 : À propos -->
+        <div class="footer-section">
+            <h3>A propos</h3>
+            <a href="tel:+33238000000" aria-label="Appeler la boulangerie au 02 38 00 00 00">02 38 00 00 00</a>
+            <a href="mailto:bakery@coda.school" aria-label="Envoyer un e-mail à bakery@coda.school">bakery@coda.school</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=24+Rue+Jeanne+d%27Arc+45000+Orl%C3%A9ans" target="_blank" rel="noopener" aria-label="Ouvrir l'adresse dans Google Maps">24 Rue Jeanne d'Arc</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=45000+Orl%C3%A9ans" target="_blank" rel="noopener" aria-label="Ouvrir l'adresse dans Google Maps">45000 Orléans</a>
+        </div>
+
+        <!-- Section 2 : Navigation Explorer -->
+        <div class="footer-section explor">
+            <h3>Explorer</h3>
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Services</a></li>
+            </ul>
+        </div>
+
+        <!-- Section 3 : Actualités -->
+        <div class="footer-section actu">
+            <h3>Actualité</h3>
+            <!-- Article 1 -->
+            <div class="news-item">
+                <img src="newdes.png" alt="Nouveau délice">
+                <div>
+                    <p class="date">14 juin 2024</p>
+                    <p class="titre">Nouveau délice</p>
+                </div>
+            </div>
+
+            <!-- Article 2 -->
+            <div class="news-item">
+                <img src="painrai.png" alt="Pain au raisin">
+                <div>
+                    <p class="date">14 juin 2024</p>
+                    <p class="titre">Pain au raisin</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <p class="copy">© 2025 Coda Bakery. Tous droits réservés</p>
 </footer>
+
+</body>
+</html>

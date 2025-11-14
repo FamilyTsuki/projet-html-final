@@ -1,14 +1,21 @@
+/* ========================================
+   STYLES DE BASE
+   ======================================== */
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   background-color: #fff;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Empêche le scroll horizontal */
 }
+
+/* ========================================
+   HEADER (MOBILE)
+   ======================================== */
 
 header {
   display: flex;
-  
-   z-index: 10;
+  z-index: 10;
   background: white;
   max-height: 14vw;
 }
@@ -19,24 +26,26 @@ header img {
   width: auto;
 }
 
+/* Checkbox du menu burger (caché) */
 #hamburger {
   display: none;
 }
 
+/* Icône burger */
 #hamburger-logo {
   cursor: pointer;
- 
   width: 10vw;
   display: block;
   color: white;
   font-size: 8vw;
   text-align: center;
-  transform: translate(64vw,0.5vw);
+  transform: translate(64vw, 0.5vw);
   padding: 10px;
   z-index: 20;
   transition: 0.7s;
 }
 
+/* Menu burger (navigation mobile) */
 nav.bg {
   position: relative;
   z-index: 20;
@@ -45,11 +54,12 @@ nav.bg {
   background: rgb(0, 0, 0);
   overflow: hidden;
   width: 200px;
-  transform: translateX(100vw);
+  transform: translateX(100vw); /* Caché par défaut */
   transition: 0.7s;
 }
+
 nav.bg a {
-  font-family:'Poppins' ,Arial;
+  font-family: 'Poppins', Arial;
   color: white;
   text-decoration: none;
   padding: 10px;
@@ -58,35 +68,44 @@ nav.bg a {
 nav.bg a:hover {
   background: #444;
 }
-#hamburger:checked ~ #hamburger-logo,#hamburger:checked ~ nav {
-  transform: translate(40vw,0.5vw);
+
+/* Animation ouverture du menu burger */
+#hamburger:checked ~ #hamburger-logo,
+#hamburger:checked ~ nav {
+  transform: translate(40vw, 0.5vw);
 }
 
-
+/* Icône hamburger par défaut */
 #hamburger-logo::before {
   content: "☰";
   color: #000000;
-
 }
 
 #hamburger-logo {
   color: transparent;
   position: relative;
 }
+
+/* Fond gris quand le menu est ouvert */
 #hamburger:checked + #hamburger-logo {
   background-color: gray;
 }
+
+/* Icône croix quand le menu est ouvert */
 #hamburger:checked + #hamburger-logo::before {
   content: "✖";
   color: #000000;
-  
 }
 
-
+/* ========================================
+   NAVIGATION DESKTOP
+   ======================================== */
 
 nav.pc {
-  display: none;
+  display: none; /* Caché par défaut sur mobile */
 }
+
+/* Lien actif (page Accueil) */
 nav.pc a.acceuil {
   color: #E9BD8C;
 }
@@ -97,57 +116,60 @@ nav.pc a:hover {
   transform: scale(1.05);
 }
 
-
+/* ========================================
+   SECTION HERO
+   ======================================== */
 
 section.hero {
   position: relative;
   text-align: center;
   background-color: #242d93;
   z-index: 0;
-  
 }
 
+/* Image de fond */
 section.hero img.fond {
   width: 100%;
-  transform: rotateY(180deg);
-
+  transform: rotateY(180deg); /* Effet miroir */
   height: auto;
   display: block;
 }
+
+/* Logo (visible uniquement sur desktop) */
 section.hero img.logo {
   position: absolute;
   top: 0px;
   left: 5vw;
-   display: none;
-   width: 14vw;   
+  display: none; /* Caché sur mobile */
+  width: 14vw;
 }
 
-
+/* Texte du hero */
 section.hero div.hero-text {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 8%;
-  transform: translateY(-50%);
+  transform: translateY(-50%); /* Centrage vertical */
   color: white;
   text-align: left;
 }
 
 section.hero div.hero-text p {
-  
   color: #E9BD8C;
   font-size: 3vw;
 }
 
 section.hero div.hero-text h1 {
   font-family: 'Sansita Swashed', cursive;
-  
   font-size: 6.5vw;
   margin: 0.5rem 0;
 }
 
+/* Bouton "Commander" */
 .btncom {
-  margin-top: 13vh;
-  margin-left: 6vw;
+  position: absolute;
+  top: 120%;
+  left: 8%;
   font-size: 2.5vw;
   display: inline-block;
   background-color: #933C24;
@@ -158,53 +180,59 @@ section.hero div.hero-text h1 {
   text-decoration: none;
   transition: transform 0.3s ease;
 }
+
 .btncom:hover {
   transform: scale(1.1);
   transition: transform 0.3s ease;
-  
 }
 
+/* ========================================
+   SECTION NOS TOPS PRODUITS
+   ======================================== */
 
 section.top {
   text-align: center;
   padding: 0.2rem 1rem;
-  
 }
 
 section.top h2 {
   font-family: 'Sansita Swashed', cursive;
-  font-size: 5vw;
+  font-size: 7vw;
   margin-bottom: 2.4rem;
-  padding: 6vw;
+  padding: 3vw;
   font-weight: 800;
 }
 
+/* Grille de produits */
 section.top div.produits {
   display: grid;
   gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(23vw, 1fr));
   justify-content: center;
 }
+
+/* Carte produit individuelle */
 section.top div.produits div.pain {
   background-image: url(fond.png);
   background-size: cover;
- 
   height: auto;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 1rem;
   color: white;
   position: relative;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1 / 1; /* Format carré */
 }
 
-
+/* Image du produit */
 section.top div.produits div.pain img {
   height: 60%;
   width: auto;
   display: block;
   margin: 0 auto 1rem auto;
 }
+
+/* Ajustements spécifiques par image */
 section.top div.produits div.pain img.jambon {
   height: 90%;
   margin-top: -4rem;
@@ -213,33 +241,39 @@ section.top div.produits div.pain img.jambon {
 section.top div.produits div.pain img.feuille {
   height: 56%;
   width: 64%;
-  transform: translate(7%,8%);
+  transform: translate(7%, 8%);
 }
+
 section.top div.produits div.pain img.bag {
   rotate: -20deg;
 }
+
 section.top div.produits div.pain img.mich {
   height: 68%;
   margin-top: -0.4rem;
-  
 }
+
+/* Nom du produit */
 section.top div.produits div.pain p.nom {
-   position: absolute;
-    top: 80%;
-    left: 10%;
-    font-size: 20px;
+  position: absolute;
+  top: 80%;
+  left: 10%;
+  font-size: 20px;
   margin: 0.3rem 0;
-} 
+}
+
+/* Prix du produit */
 section.top div.produits div.pain p.prix {
-   position: absolute;
+  position: absolute;
   top: 65%;
   left: 10%;
   font-size: 20px;
   margin: 0.3rem 0;
 }
 
+/* Bouton "Ajouter" */
 section.top div.produits div.pain a.add {
-   position: absolute;
+  position: absolute;
   top: 80%;
   left: 80%;
   display: inline-block;
@@ -257,16 +291,23 @@ section.top div.produits div.pain a.add {
 section.top div.produits div.pain a.add:hover {
   transform: scale(1.1);
 }
+
+/* Icône information */
 section.top div.produits div.pain img.infor {
-   position: absolute;
+  position: absolute;
   top: 64%;
   left: 76%;
   height: 10%;
   transition: transform 0.3s ease;
 }
+
 section.top div.produits div.pain img.infor:hover {
   transform: scale(1.05) rotate(4deg);
 }
+
+/* ========================================
+   SECTION PROMOTION
+   ======================================== */
 
 section.promo {
   margin-top: 2.5rem;
@@ -292,6 +333,7 @@ section.promo p {
   font-size: 1.4rem;
   margin-bottom: 6rem;
 }
+
 section.promo a {
   display: inline-block;
   background-color: #933C24;
@@ -304,9 +346,14 @@ section.promo a {
   transition: transform 0.3s ease;
   margin-bottom: 1rem;
 }
+
 section.promo a:hover {
   transform: scale(1.1);
 }
+
+/* ========================================
+   SECTION DÉCOUVRIR
+   ======================================== */
 
 section.decouvert {
   text-align: center;
@@ -318,6 +365,7 @@ section.decouvert h2 {
   font-size: 2rem;
 }
 
+/* Filtres de catégories */
 section.decouvert div.choix {
   margin-top: -1rem;
   display: flex;
@@ -336,19 +384,28 @@ section.decouvert div.choix a {
   padding: 0.4rem 1rem;
   border-radius: 5px;
 }
+
 section.decouvert div.choix a:hover {
   background: #ee9671;
 }
+
+/* Ligne de séparation */
 hr {
   color: #D9D9D9;
   width: 90vw;
   opacity: 0.5;
 }
+
+/* ========================================
+   GALERIE DÉCOUVERTE (GRILLE D'IMAGES)
+   ======================================== */
+
 section.decou {
   padding: 1rem 3rem;
   max-width: 1100px;
   margin: 0 auto;
 }
+
 section.decou div.grid-decou {
   display: grid;
   gap: 3rem;
@@ -360,30 +417,37 @@ section.decou div.grid-decou > div {
   height: 78vw;
   background-size: cover;
   background-position: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
 }
 
-
-section.decou div.grid-decou div.flexm  { 
-  background-image: url(mmuffin.png); 
-}
-section.decou div.grid-decou div.flexc  { 
-  background-image: url(chess.png); 
-}
-section.decou div.grid-decou div.flexcr { 
-  background-image: url(crumbl.png); 
-}
-section.decou div.grid-decou div.flexbu { 
-  background-image: url(butter.png); 
-}
-section.decou div.grid-decou div.flexch { 
-  background-image: url(choco.png); 
-}
-section.decou div.grid-decou div.flexch2{ 
-  background-image: url(choco2.png); 
+/* Images de fond pour chaque carte */
+section.decou div.grid-decou div.flexm {
+  background-image: url(mmuffin.png);
 }
 
+section.decou div.grid-decou div.flexc {
+  background-image: url(chess.png);
+}
 
+section.decou div.grid-decou div.flexcr {
+  background-image: url(crumbl.png);
+}
+
+section.decou div.grid-decou div.flexbu {
+  background-image: url(butter.png);
+}
+
+section.decou div.grid-decou div.flexch {
+  background-image: url(choco.png);
+}
+
+section.decou div.grid-decou div.flexch2 {
+  background-image: url(choco2.png);
+}
+
+/* ========================================
+   SECTION À PROPOS
+   ======================================== */
 
 section.propos {
   margin-top: 1rem;
@@ -396,7 +460,6 @@ section.propos {
 }
 
 section.propos h2 {
-  
   font-family: 'Sansita Swashed', cursive;
   font-size: 6vw;
 }
@@ -420,6 +483,10 @@ section.propos a {
   transition: transform 0.3s ease;
 }
 
+/* ========================================
+   SECTION PETITS PLAISIRS
+   ======================================== */
+
 section.plaisirs {
   text-align: center;
   padding: 0.6rem 1rem;
@@ -432,6 +499,7 @@ section.plaisirs h2 {
   font-weight: 900;
 }
 
+/* Grille de 3 produits */
 section.plaisirs div.galerie {
   display: grid;
   gap: 1.1rem;
@@ -439,72 +507,76 @@ section.plaisirs div.galerie {
   justify-content: center;
   align-items: stretch;
 }
+
+/* Effet hover sur les cartes */
 section.plaisirs div.galerie .cart {
-    transition: transform 0.3s ease;
-    text-decoration: none;
+  transition: transform 0.3s ease;
+  text-decoration: none;
 }
+
 section.plaisirs div.galerie a.cart:hover {
-   transform: translatey(-5px);
+  transform: translatey(-5px); /* Lève la carte au survol */
 }
 
-
-section.plaisirs div.galerie div.item1,section.plaisirs div.galerie div.item2,section.plaisirs div.galerie div.item3 {
+/* Images des produits */
+section.plaisirs div.galerie div.item1,
+section.plaisirs div.galerie div.item2,
+section.plaisirs div.galerie div.item3 {
   position: relative;
   background-size: cover;
   background-position: center;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  width: 100%; 
+  width: 100%;
   aspect-ratio: 1 / 1;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: block; 
+  display: block;
 }
 
 section.plaisirs div.galerie div.item1 {
   background-image: url(patefeuille.png);
   background-position-x: 100%;
-
 }
+
 section.plaisirs div.galerie div.item2 {
   background-image: url(donuts.png);
   background-position-x: 0;
   overflow: hidden;
 }
+
 section.plaisirs div.galerie div.item3 {
   background-image: url(browni.png);
   background-position-x: 85%;
 }
 
-
+/* Informations produit (nom et prix) */
 section.plaisirs .info {
   position: static;
-
   color: rgb(0, 0, 0);
-  
-  margin-top: 0.5rem; 
+  margin-top: 0.5rem;
   display: flex;
   justify-content: space-between;
   font-weight: 600;
   font-size: clamp(20px, 2vw);
-  
   box-sizing: border-box;
   border-radius: 8px;
 }
 
-
+/* ========================================
+   FOOTER
+   ======================================== */
 
 footer.foot {
   background: url('fond4.png') center/cover no-repeat;
   color: #E9BD8C;
-
   padding: 0rem 1rem;
   font-family: 'Poppins', sans-serif;
   display: flex;
   flex-direction: column;
-
 }
 
+/* Logo du footer */
 .foot-logo {
   margin-top: -3rem;
   display: flex;
@@ -521,16 +593,14 @@ footer.foot {
   overflow: hidden;
 }
 
-
-
+/* Section réseaux sociaux */
 .social {
-  margin-top: -5.2rem ;
+  margin-top: -5.2rem;
 }
 
 .social p {
   font-weight: bold;
   font-size: 2.1rem;
-  
   margin-bottom: 0.6rem;
 }
 
@@ -550,21 +620,21 @@ footer.foot {
   transform: scale(1.2);
 }
 
+/* Ligne décorative du footer */
 hr.logo {
-  background-color:#E9BD8C;
+  background-color: #E9BD8C;
   width: 94vw;
   height: 2px;
   opacity: 0.2;
   margin-bottom: 1rem;
 }
+
+/* Section du footer */
 .footer-section {
   width: 26vw;
-  
-  
 }
 
 .footer-section h3 {
-  
   text-align: center;
   color: #E9BD8C;
   font-size: 3rem;
@@ -572,42 +642,37 @@ hr.logo {
   margin-bottom: 1rem;
 }
 
-
-
-
+/* Liens du footer */
 .footer-section a {
   display: block;
   font-family: 'Poppins';
   color: white;
   text-decoration: none;
-
   line-height: 1.6;
   font-size: 2rem;
-  
 }
 
 .footer-section a:hover {
   text-decoration: underline;
 }
 
-
+/* Liste Explorer */
 .footer-section ul {
-  
   width: 100vw;
   list-style: none;
   padding-left: 0;
   margin-left: 0;
   text-align: left;
-  
 }
 
 .footer-section li {
-   padding-left: 0;
+  padding-left: 0;
   margin-left: 0;
   font-size: 1.2rem;
   font-family: 'Poppins';
 }
 
+/* Articles d'actualité */
 .actu .news-item {
   display: flex;
   align-items: center;
@@ -616,7 +681,6 @@ hr.logo {
   transform: none;
   justify-content: flex-start;
   padding-left: 0;
-  
 }
 
 .actu img {
@@ -647,17 +711,33 @@ hr.logo {
   justify-content: center;
 }
 
+/* Container des sections du footer */
 .footer-sections-container {
   display: flex;
   flex-direction: column;
-  
   gap: 2rem;
   width: 100%;
 }
-@media (min-width: 920px) {
 
+/* Copyright */
+.copy {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #737373;
+  font-weight: 600;
+  margin-top: 2.8rem;
+  padding-left: 20vw;
+  padding-right: 20vw;
+}
+
+/* ========================================
+   MEDIA QUERIES - DESKTOP (920px+)
+   ======================================== */
+
+@media (min-width: 920px) {
+  /* Footer desktop */
   .footer-sections-container {
-    flex-direction: row; 
+    flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
   }
@@ -668,13 +748,18 @@ hr.logo {
     margin-left: 4vw;
     margin-right: 4vw;
   }
-  .actu{
+
+  /* Ajustement section Actualité */
+  .actu {
     margin-left: -10vw;
   }
+
+  /* Ajustement section Explorer */
   .explor {
     max-width: 20vw;
     margin-left: -2vw;
   }
+
   .foot-logo img {
     margin-top: -0.8rem;
     margin-left: -80vw;
@@ -686,12 +771,13 @@ hr.logo {
     overflow: hidden;
   }
 
- 
+  /* Images actualité plus petites */
   .actu img {
     width: 10vw;
     height: auto;
   }
-   .actu p.date {
+
+  .actu p.date {
     font-size: 1.4vw;
   }
 
@@ -699,13 +785,13 @@ hr.logo {
     font-size: 1.8vw;
   }
 
-  
+  /* Footer en position relative pour positionnement absolu */
   footer.foot {
     position: relative;
     padding-top: 3rem;
   }
 
-  
+  /* Suivez-nous en haut à droite */
   .social {
     position: absolute;
     top: 5rem;
@@ -733,95 +819,95 @@ hr.logo {
     height: 3.5rem;
   }
 
-
+  /* Ligne de séparation ajustée */
   hr.logo {
     margin-top: -4rem;
     margin-bottom: 3rem;
   }
 
-
+  /* Titres sections footer */
   .footer-section h3 {
     margin-top: 0;
     font-size: 3vw;
     text-align: left;
-  
     display: flex;
-  
-  text-align: left;
   }
-    section.plaisirs h2 {
-    font-size: 5vw;
-    margin:7vw;
-    padding-bottom: 2vw;
-    
 
+  /* Ajustements sections principales */
+  section.plaisirs h2 {
+    font-size: 5vw;
+    margin: 7vw;
+    padding-bottom: 2vw;
   }
+
   section.decouvert h2 {
     font-size: 4vw;
     margin: 6vw;
   }
+
   section.decouvert div.choix {
     margin-right: 10vw;
-    
   }
-   section.decouvert div.choix a {
+
+  section.decouvert div.choix a {
     font-size: 2vw;
-  
   }
+
+  /* Section promo ajustée */
   section.promo {
-  margin-top: 2.5rem;
-  
+    margin-top: 2.5rem;
+    padding: 1rem 20vw;
+  }
 
-  padding: 1rem 20vw;
+  section.promo h2 {
+    color: #933C24;
+    font-family: 'Sansita Swashed', cursive;
+    font-size: 3vw;
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+    font-weight: 900;
+    padding: 1rem 10vw;
+  }
+
+  section.promo p {
+    color: #5D5D5D;
+    margin: 0.5rem 0;
+    font-size: 2.6vw;
+    margin-bottom: 3rem;
+    padding: 1rem 10vw;
+  }
+
+  section.promo a {
+    display: inline-block;
+    background-color: #933C24;
+    color: white;
+    padding: 1.6rem 2rem;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    margin-bottom: 1rem;
+  }
 }
 
-section.promo h2 {
-  color: #933C24;
-  font-family: 'Sansita Swashed', cursive;
-  font-size: 3vw;
-  margin-top: 2rem;
-  margin-bottom: 2.5rem;
-  font-weight: 900;
-  padding: 1rem 10vw;
-  
-}
-
-section.promo p {
-  color: #5D5D5D;
-  margin: 0.5rem 0;
-  font-size: 2.6vw;
-  margin-bottom: 3rem;
-  padding: 1rem 10vw;
-
-}
-section.promo a {
-  display: inline-block;
-  background-color: #933C24;
-  color: white;
-  padding: 1.6rem 2rem;
-  border-radius: 10px;
-  font-size: 1.4rem;
-  font-weight: bold;
-  text-decoration: none;
-  transition: transform 0.3s ease;
-  margin-bottom: 1rem;
-}
-}
-
-
+/* Titre footer centré par défaut sur mobile */
 .footer-section h3 {
   margin-top: 0;
   text-align: center !important;
 }
 
-
+/* ========================================
+   MEDIA QUERIES - TABLETTE (720px+)
+   ======================================== */
 
 @media (min-width: 720px) {
-
+  /* Affiche le logo dans le hero */
   section.hero img.logo {
     display: block;
   }
 
+  /* Navigation desktop visible */
   nav.pc {
     display: flex;
     position: absolute;
@@ -845,15 +931,18 @@ section.promo a {
     transition: all 0.3s ease;
   }
 
+  /* Cache le header mobile */
   header {
     display: none;
   }
 
+  /* Ajustement bouton Ajouter */
   section.top div.produits div.pain a.add {
     padding: 0.7rem 1rem;
     font-size: 1.5vw;
   }
 
+  /* Grille découverte responsive */
   section.decou div.grid-decou {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.25rem;
@@ -864,44 +953,57 @@ section.promo a {
     width: 28vw;
     height: 28vw;
   }
+
+  /* Ajustements section À propos */
   section.propos p {
     margin-top: 3rem;
     margin-bottom: 3rem;
     padding-left: 28vw;
     padding-right: 28vw;
   }
+
   section.propos {
     padding: 0.2rem 0em;
   }
+
   section.propos a {
-    
     padding: 1vw 2.4vw;
     margin-bottom: 6vw;
   }
 }
 
+/* ========================================
+   MEDIA QUERIES - GRAND ÉCRAN (1100px+)
+   ======================================== */
 
 @media (min-width: 1100px) {
+  /* Grille fixe à 3 colonnes */
   section.decou div.grid-decou {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
+/* ========================================
+   MEDIA QUERIES - MOBILE (MAX 720px)
+   ======================================== */
 
 @media (max-width: 720px) {
-
+  /* Produits en une seule colonne */
   section.top div.produits {
     grid-template-columns: 1fr;
   }
 
+  /* Galerie plaisirs en une colonne */
   section.plaisirs div.galerie {
     grid-template-columns: 1fr;
   }
 }
 
+/* ========================================
+   MEDIA QUERIES - MOBILE FOOTER (MAX 920px)
+   ======================================== */
 
 @media (max-width: 920px) {
-
   .footer-section {
     width: 100%;
   }
@@ -913,24 +1015,15 @@ section.promo a {
     text-align: left;
   }
 
+  /* Décalage à gauche pour alignement */
   .footer-section a,
   .footer-section p,
   .news-item {
     margin-left: 10vw;
   }
 
+  /* Suivez-nous centré sur mobile */
   .social p {
     text-align: center;
   }
-}
-
-
-.copy {
-  font-size: 1.5rem;
-  text-align: center;
-  color: #737373;
-  font-weight: 600;
-  margin-top: 2.8rem;
-  padding-left: 20vw;
-  padding-right: 20vw;
 }
