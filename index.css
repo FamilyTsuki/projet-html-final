@@ -323,7 +323,7 @@ section.decouvert div.choix {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 section.decouvert div.choix a {
@@ -398,12 +398,12 @@ section.propos {
 section.propos h2 {
   
   font-family: 'Sansita Swashed', cursive;
-  font-size: 1.8rem;
+  font-size: 6vw;
 }
 
 section.propos p {
-  font-size: 24px;
-  margin: 6rem 0;
+  font-size: 4vw;
+  margin: 5rem 0;
   color: #B9B9B9;
 }
 
@@ -412,7 +412,7 @@ section.propos a {
   display: inline-block;
   background-color: #933C24;
   color: white;
-  font-size: 23px;
+  font-size: 3vw;
   padding: 1.6rem 3rem;
   border-radius: 10px;
   font-weight: bold;
@@ -438,6 +438,13 @@ section.plaisirs div.galerie {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   justify-content: center;
   align-items: stretch;
+}
+section.plaisirs div.galerie .cart {
+    transition: transform 0.3s ease;
+    text-decoration: none;
+}
+section.plaisirs div.galerie a.cart:hover {
+   transform: translatey(-5px);
 }
 
 
@@ -479,7 +486,8 @@ section.plaisirs .info {
   display: flex;
   justify-content: space-between;
   font-weight: 600;
-  font-size: 1;
+  font-size: clamp(20px, 2vw);
+  
   box-sizing: border-box;
   border-radius: 8px;
 }
@@ -740,6 +748,63 @@ hr.logo {
     display: flex;
   
   text-align: left;
+  }
+    section.plaisirs h2 {
+    font-size: 5vw;
+    margin:7vw;
+    padding-bottom: 2vw;
+    
+
+  }
+  section.decouvert h2 {
+    font-size: 4vw;
+    margin: 6vw;
+  }
+  section.decouvert div.choix {
+    margin-right: 10vw;
+    
+  }
+   section.decouvert div.choix a {
+    font-size: 2vw;
+  
+  }
+  section.promo {
+  margin-top: 2.5rem;
+  
+
+  padding: 1rem 20vw;
+}
+
+section.promo h2 {
+  color: #933C24;
+  font-family: 'Sansita Swashed', cursive;
+  font-size: 3vw;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+  font-weight: 900;
+  padding: 1rem 10vw;
+  
+}
+
+section.promo p {
+  color: #5D5D5D;
+  margin: 0.5rem 0;
+  font-size: 2.6vw;
+  margin-bottom: 3rem;
+  padding: 1rem 10vw;
+
+}
+section.promo a {
+  display: inline-block;
+  background-color: #933C24;
+  color: white;
+  padding: 1.6rem 2rem;
+  border-radius: 10px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  margin-bottom: 1rem;
 }
 }
 
@@ -796,8 +861,22 @@ hr.logo {
   }
 
   section.decou div.grid-decou > div {
-    width: 23vw;
-    height: 23vw;
+    width: 28vw;
+    height: 28vw;
+  }
+  section.propos p {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding-left: 28vw;
+    padding-right: 28vw;
+  }
+  section.propos {
+    padding: 0.2rem 0em;
+  }
+  section.propos a {
+    
+    padding: 1vw 2.4vw;
+    margin-bottom: 6vw;
   }
 }
 
