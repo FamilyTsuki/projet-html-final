@@ -746,7 +746,7 @@ hr.logo {
    MEDIA QUERIES - DESKTOP (920px+)
    ======================================== */
 
-@media (min-width: 920px) {
+@media (min-width: 1024px) {
   /* Footer desktop */
   .footer-sections-container {
     flex-direction: row;
@@ -915,7 +915,7 @@ hr.logo {
    MEDIA QUERIES - TABLETTE (720px+)
    ======================================== */
 
-@media (min-width: 720px) {
+@media (min-width: 768px) {
   /* Affiche le logo dans le hero */
   section.hero img.logo {
     display: block;
